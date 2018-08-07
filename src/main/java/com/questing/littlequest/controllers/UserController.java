@@ -11,19 +11,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Controller
-//@RequestMapping("/login")
 @SessionAttributes("username")
 public class UserController {
-
 
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/login")
+    @GetMapping("/portal")
     public String homepage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -42,18 +39,62 @@ public class UserController {
         if (username != null) {
             model.addAttribute("username", username);
         }
-        return "login";
+        return "portal";
     }
 
-
-    @PostMapping("/register")
-    public ModelAndView createUser (@RequestParam String username, @RequestParam String password, Model model, HttpServletRequest request){
-        List<Users> usersList = userRepository.findByUsername(username);
-
-        System.out.println(Arrays.toString(new List[]{usersList}));
+    //Log in a returning user
+    @PostMapping("/login")
+    public String login(
+            HttpServletRequest request,
+//            @PathVariable("id") Long id,
+            @RequestParam String username,
+            @RequestParam String password
+    ) {
         ModelAndView mv = new ModelAndView();
 
-        if (usersList.size() != 0){
+        //needed to check if the username coming back actually exists
+        List<Users> checkUsername = userRepository.findByUsername(username);
+        System.out.println("CheckUsername from List = " + checkUsername.toString());
+
+        //needed to call the method of checkPassword on this instance of user
+        Users user = userRepository.findUsersByUsername(username);
+        System.out.println("User = " + user.toString());
+
+        //if the list of usernames is empty, it means the username entered does not exist
+        if (checkUsername.size() == 0) {
+            mv.setViewName("login-error");
+            mv.addObject("error", "Username not found. Please choose another or register.");
+        } else {
+            boolean isCorrectPassword = user.checkPassword(password);
+            System.out.println("checkPassword = " + user.checkPassword(password));
+            if(isCorrectPassword) {
+                mv.setViewName("loggedin");
+                mv.addObject("username", username);
+
+                HttpSession session = request.getSession();
+                session.setAttribute("loggedin", true);
+            } else {
+                mv.setViewName("loginerror");
+                mv.addObject("error", "Wrong password. Try again.");
+            }
+        }
+        return "redirect:/portal";
+    }
+
+    //register a new user
+    @PostMapping("/register")
+    public ModelAndView createUser (@RequestParam String username,
+                                    @RequestParam String password,
+                                    Model model,
+                                    HttpServletRequest request){
+
+        List<Users> checkUsername = userRepository.findByUsername(username);
+
+
+        System.out.println(Arrays.toString(new List[]{checkUsername}));
+        ModelAndView mv = new ModelAndView();
+
+        if (checkUsername.size() != 0){
             mv.setViewName("login-error");
             mv.addObject("error", "That username already exists. Please choose another.");
         } else {
