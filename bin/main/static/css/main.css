@@ -1,0 +1,6 @@
+body {
+    background-color: darkcyan;
+}
+.selector-for-some-widget {
+    box-sizing: content-box;
+}

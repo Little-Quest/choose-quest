@@ -20,7 +20,7 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/portal")
-    public String homepage(HttpServletRequest request, Model model) {
+    public String portalPage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
@@ -43,9 +43,9 @@ public class UserController {
 
     //Log in a returning user
     @PostMapping("/login")
-    public String login(
+    public ModelAndView login(
             HttpServletRequest request,
-//            @PathVariable("id") Long id,
+//           @PathVariable("id") Long id,
             @RequestParam String username,
             @RequestParam String password
     ) {
@@ -67,17 +67,17 @@ public class UserController {
             boolean isCorrectPassword = user.checkPassword(password);
             System.out.println("checkPassword = " + user.checkPassword(password));
             if(isCorrectPassword) {
-                mv.setViewName("loggedin");
+                mv.setViewName("story-choice");
                 mv.addObject("username", username);
 
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedin", true);
             } else {
-                mv.setViewName("loginerror");
+                mv.setViewName("login-error");
                 mv.addObject("error", "Wrong password. Try again.");
             }
         }
-        return "redirect:/portal";
+        return mv;
     }
 
     //register a new user
@@ -100,7 +100,7 @@ public class UserController {
             String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
             Users user = userRepository.save(new Users(username, passhash));
             System.out.println("Succesfully added user: " + username);
-            mv.setViewName("index");
+            mv.setViewName("story-choice");
             HttpSession session = request.getSession();
             session.setAttribute("loggedin", true);
         }
@@ -137,6 +137,6 @@ public class UserController {
                 + "Session ID: " + session.getId() + " for User " + "\"" + username + "\""
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
-        return "redirect:/portal";
+        return "index";
     }
 }

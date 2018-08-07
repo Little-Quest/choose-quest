@@ -1,3 +1,41 @@
 body {
-    background-color: darkcyan;
+    background-color: #19647E;
+    color: white;
+}
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+img {
+    align-content: center;
+    display: inline-block;
+}
+
+#register-button {
+    color: #19647E;
+    width: 15%;
+    margin:auto;
+}
+
+#logout-button {
+    color: #19647E;
+    width: 15%;
+    margin:auto;
+}
+
+#signin-button {
+    color: #19647E;
+    width: 15%;
+    margin:auto;
+}
+
+button {
+    background-color: #FEC601;
+    /*color: white;*/
+    /*margin: auto;*/
+    /*width: 15%;*/
+}
+
+#logout {
+    margin-top: 4em;
 }
