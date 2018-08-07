@@ -16,12 +16,12 @@
     <!--<div>-->
 
     <!--<p>-->
-    <!--<span th:if="${username != 'username'}">Welcome, <b th:text="${username}" />-->
-    <!--<p>You may access the <a href="/private/secret.html">music vault</a></p></span>-->
+    <!--<span th:if="${username == 'username'}">Welcome, <b th:text="${username}" />-->
+    <!--<p>You may select a <a href="/private/story-choice.html">story</a></p></span>-->
     <!--</p>-->
 
     <!--<p>-->
-    <!--<span th:if="${username == 'username'}">Welcome to the vault, <b th:text="${username}" />-->
+    <!--<span th:if="${username == user}">Welcome to Little Quest, <b th:text="${username}" />-->
     <!--<p>Please log in for site access.</p></span>-->
     <!--</p>-->
 
@@ -29,11 +29,9 @@
 </header>
 
 <main>
-    <!--<div th:if="${username == 'username'}">-->
+    <!--<div th:if="${username != 'username'}">-->
     <div id="login">
     <h2>Login</h2>
-
-        <!--<form th:action="'/login/' + ${id}" method="POST">-->
 
         <form action="/login" method="POST">
     <div>Username: <input type="text" name="username" /></div>
