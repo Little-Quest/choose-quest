@@ -5,10 +5,11 @@
         <title>Story Selection</title>
     </head>
     <body>
+        <a href="/">HOME</a>
         <div>
             <ul>
-                <li th:each="story : ${stories}">
-                    <span th:text="${story.title}" />
+                <li th:each= "story : ${stories}">
+                    <span th:text= "${story.title}" />
                 </li>
             </ul>
         </div>

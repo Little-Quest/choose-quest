@@ -22,6 +22,7 @@ public class StoryController {
     @GetMapping("/story-choice")
     public String storyDisplay(Model model) {
         List<Stories> stories = storiesRepository.findAll();
+        System.out.println("Stories = " + stories.toString());
         model.addAttribute("stories", stories);
         return "redirect:/story-choice";
     }
