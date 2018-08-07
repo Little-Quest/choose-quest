@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Story Selection</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
 
-</body>
+    <head>
+        <title>Story Selection</title>
+    </head>
+    <body>
+        <a href="/">HOME</a>
+        <div>
+            <ul>
+                <li th:each= "story : ${stories}">
+                    <span th:text= "${story.title}" />
+                </li>
+            </ul>
+        </div>
+    </body>
+
 </html>
