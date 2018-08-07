@@ -20,7 +20,7 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/portal")
-    public String homepage(HttpServletRequest request, Model model) {
+    public String portalPage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
 
