@@ -4,3 +4,32 @@ body {
 .selector-for-some-widget {
     box-sizing: content-box;
 }
+
+#register-button {
+    color: white;
+    width: 15%;
+    margin:auto;
+}
+
+#logout-button {
+    color: white;
+    width: 15%;
+    margin:auto;
+}
+
+#signin-button {
+    color: white;
+    width: 15%;
+    margin:auto;
+}
+
+button {
+    background-color: #19647E;
+    /*color: white;*/
+    /*margin: auto;*/
+    /*width: 15%;*/
+}
+
+#logout {
+    margin-top: 4em;
+}
