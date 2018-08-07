@@ -1,8 +1,6 @@
 package com.questing.littlequest.models;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.mindrot.jbcrypt.BCrypt;
-
 import javax.persistence.*;
 
 @Entity
