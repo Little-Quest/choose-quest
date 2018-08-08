@@ -15,12 +15,20 @@ public class NewPromptTable {
     @SequenceGenerator(name="prompt-id-generator")
 
     public Long prompt_id;
+    public Long story_id;
     public String prompt_text;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "story_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private NewStoryTable newStoryTable;
 
     public NewPromptTable() {
     }
 
-    public NewPromptTable(String prompt_text) {
+    public NewPromptTable(Long story_id, String prompt_text) {
+        this.story_id = story_id;
         this.prompt_text = prompt_text;
     }
 

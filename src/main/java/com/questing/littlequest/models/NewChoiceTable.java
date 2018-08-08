@@ -24,21 +24,11 @@ public class NewChoiceTable {
 
 
 
-        @ManyToMany(fetch = FetchType.LAZY)
-        @JoinColumn(name = "prompt_id", nullable = false)
-        @OnDelete(action = OnDeleteAction.CASCADE)
-        @JsonIgnore
-        private NewChoiceTable choiceTable;
-
-        @ManyToMany(fetch = FetchType.LAZY,
-                cascade = {
-                        CascadeType.PERSIST,
-                        CascadeType.MERGE
-                })
-        @JoinTable(name = "newprompttable",
-                joinColumns = { @JoinColumn(name = "prompt_id") },
-                inverseJoinColumns = { @JoinColumn(name = "prompt_id") })
-        private Set<NewChoiceTable> choice = new HashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "prompt_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private NewPromptTable newPromptTable;
 
     public NewChoiceTable() {
     }
