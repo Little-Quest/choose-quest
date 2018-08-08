@@ -24,6 +24,6 @@ public class StoryController {
         List<Stories> stories = storyRepository.findAll();
         System.out.println("Stories = " + stories.toString());
         model.addAttribute("stories", stories);
-        return "redirect:/story-choice";
+        return "story-choice";
     }
 }
