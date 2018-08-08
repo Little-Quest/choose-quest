@@ -7,10 +7,10 @@ import javax.persistence.*;
 public class Stories {
     @Id
     @GeneratedValue
-    @SequenceGenerator(name="prompt-id-generator")
+    @SequenceGenerator(name="story-id-generator")
 
-    public Long prompt_id;
     public Long story_id;
+    public Long prompt_id;
     public String title;
 
     public Stories() {
