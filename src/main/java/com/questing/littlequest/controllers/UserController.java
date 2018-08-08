@@ -68,7 +68,7 @@ public class UserController {
             boolean isCorrectPassword = user.checkPassword(password);
             System.out.println("checkPassword = " + user.checkPassword(password));
             if(isCorrectPassword) {
-                mv.setViewName("story-choice");
+                mv.setViewName("redirect:/story-choice");
                 mv.addObject("username", username);
 
                 HttpSession session = request.getSession();
@@ -97,17 +97,18 @@ public class UserController {
         if (checkUsername.size() != 0){
             mv.setViewName("login-error");
             mv.addObject("error", "That username already exists. Please choose another.");
-        } else {
-            String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
-            Users user = userRepository.save(new Users(username, passhash));
-            System.out.println("Succesfully added user: " + username);
-            mv.setViewName("story-choice");
-            HttpSession session = request.getSession();
-            session.setAttribute("loggedin", true);
         }
 
+        String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
+        Users user = userRepository.save(new Users(username, passhash));
+        System.out.println("Succesfully added user: " + username);
+        mv.setViewName("story-choice");
+
+        HttpSession session = request.getSession();
+        session.setAttribute("loggedin", true);
+
         model.addAttribute("username", username);
-        model.addAttribute("password", password);
+        mv.setViewName("redirect:/story-choice");
         return mv;
     }
 

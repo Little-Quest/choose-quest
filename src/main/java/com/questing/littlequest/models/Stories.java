@@ -22,7 +22,8 @@ public class Stories {
     }
 
     public String toString() {
-        return this.title;
+        return this.title + " has prompt ID of " + this.prompt_id;
+
     }
 }
 
