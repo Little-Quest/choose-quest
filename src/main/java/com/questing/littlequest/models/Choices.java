@@ -1,6 +1,5 @@
 package com.questing.littlequest.models;
 
-
 import javax.persistence.*;
 
 @Entity
@@ -18,9 +17,9 @@ public class Choices {
 
 
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "prompt_id", nullable = false)
-    private Prompts newPromptTable;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "prompt_id", nullable = false, insertable = false, updatable = false)
+    private Prompts prompts;
 
     public Choices() {
     }

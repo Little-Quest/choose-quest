@@ -16,9 +16,9 @@ public class Stories {
     public Stories() {
     }
 
-    public Stories(Long story_id, String title) {
+    public Stories(Long prompt_id, String title) {
+        this.prompt_id = prompt_id;
         this.title = title;
-        this.story_id = story_id;
     }
 
     public String toString() {

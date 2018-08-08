@@ -14,9 +14,9 @@ public class Prompts {
     public Long story_id;
     public String prompt_text;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "story_id", nullable = false)
-    private Stories newStoryTable;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "story_id", nullable = false, insertable = false, updatable = false)
+    private Stories stories;
 
     public Prompts() {
     }
