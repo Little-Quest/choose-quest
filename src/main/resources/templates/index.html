@@ -7,43 +7,64 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://littlequest.us">
         <meta property="og:description" content="Little Quest is a a short story game.">
-        <meta property="og:image" content="http://littlequest.us/images/LittleQuest_SmallLogo.tiff">
+        <meta property="og:image" content="http://littlequest.us/images/LittleQuest_SmallLogo.png">
 
         <title>Little Quest</title>
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- This is our custom sheet not bootstrap -->
         <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/main.css"/>
 
     </head>
-    <header class="main-container">
-        <img src="static/images/LittleQuest_MedLogo.tiff">
-        <nav class ="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-light">
-            <div id="top-nav">
-                <a href="/">Welcome</a>
-                <a href="/portal">Entry Portal</a>
-                <a href="/about-us.html">About Us</a>
-                <a href="/logout">Log Out</a>
-                <!--<a href="/delete-me">Delete Me</a>  (Must complete other tasks / routes first)-->
+    <header>
+        <!--<div class="container text-left">-->
+        <nav class ="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" href="static/images/menu_icon.png"></span>
+                <!--<img src="images/LQ_tiny.png">-->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Welcome<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portal">Entry Portal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </li>
+                    <!--&lt;!&ndash;<li class="nav-item">&ndash;&gt; Must do!!-->
+                        <!--<a class="nav-link disabled" href="/logout">Forget Me</a>-->
+                    <!--</li>-->
+                </ul>
             </div>
         </nav>
+        <!--</div>-->
     </header>
-    <body>
+    <body class="text-center">
+        <main class="container">
         <h1>Welcome to Little Quest!</h1>
+
         <p>We are a short story game with a "choose-your-path" style.
             You get to decide the path of the story to the end.
 
-            Sign up or login to read a story today!</p>p
-        <button type="button"><a href="/portal">Entry Portal</a></button>
-        <p>Coming soon...ways for you to save stories you've played
+            Sign up or login to read a story today!</p>
+        <button type="button" id="entry-button" class="btn btn-lg btn-outline-secondary btn-block container"><a
+                href="/portal">Entry
+            Portal</a></button>
+        </main>
+        <section alt="coming soon">
+        <p id="tiny">Coming soon...ways for you to save stories you've played
             and create your own choice-oriented stories!</p>
-
+        </section>
     <footer>
         <a href="/about-us.html">About Us</a>
-        <a href="/logout">Log Out</a>
         <a href="/logout">Log Out</a>
     </footer>
 
