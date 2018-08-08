@@ -143,17 +143,13 @@ public class UserController {
     }
 
     //delete a currently existing user
+
 //    @DeleteMapping("/delete")
 
 //    public static void deleteUser (int userId) {
 //        String sql = "DELETE user FROM users WHERE id=%d;";
 //        sql = String.format(sql, userId);
 //
-//        if () {
-//
-//        } else {
-//
-//        }
 //
 //        try {
 //            mConn.createStatement().execute(sql);
@@ -164,4 +160,5 @@ public class UserController {
 //        }
 //
 //    }
+
 }
