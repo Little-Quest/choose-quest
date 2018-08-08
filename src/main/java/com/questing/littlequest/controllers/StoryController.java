@@ -36,15 +36,29 @@ public class StoryController {
         return "story-choice";
     }
 
-    @GetMapping("/story/{id}")
-    public String displayPromptAndChoices(@PathVariable Long prompt_id, @PathVariable Long choice_id, Model model) {
-        Optional<Prompts> prompts = promptRepository.findById(prompt_id);
-        Optional<Choices> choices = choiceRepository.findById(choice_id);
+//    @GetMapping("/story")
+//    public String storyRedirect() {
+//        return "story";
+//    }
 
+    @GetMapping("/story/{id}")
+    public String displayPromptAndChoices(Model model) {
+        List<Prompts> prompts = promptRepository.findAll();
+        List<Choices> choices = choiceRepository.findAll();
+
+//        Prompts storyPrompt = storyPrompt.story_id;
+//        if () {
+//        }
+
+        System.out.println(prompts.toString());
+        System.out.println(choices.toString());
+
+        int[] numbers = {1, 2, 3};
+        model.addAttribute("numbers", numbers);
         model.addAttribute("prompts", prompts);
         model.addAttribute("choices", choices);
-        model.addAttribute("promptid", prompt_id);
-        model.addAttribute("choiceid", choice_id);
+//        model.addAttribute("promptid", prompt_id);
+//        model.addAttribute("choiceid", choice_id);
         return "story";
     }
 }
