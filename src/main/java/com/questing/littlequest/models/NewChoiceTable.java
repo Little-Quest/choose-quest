@@ -1,9 +1,15 @@
 package com.questing.littlequest.models;
 
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-    @Entity
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
     @Table(name = "newchoicetable")
 public class NewChoiceTable {
     @Id
@@ -15,6 +21,24 @@ public class NewChoiceTable {
     public Long prompt_id;
     public String choice_a_text;
     public String choice_b_text;
+
+
+
+        @ManyToMany(fetch = FetchType.LAZY)
+        @JoinColumn(name = "prompt_id", nullable = false)
+        @OnDelete(action = OnDeleteAction.CASCADE)
+        @JsonIgnore
+        private NewChoiceTable choiceTable;
+
+        @ManyToMany(fetch = FetchType.LAZY,
+                cascade = {
+                        CascadeType.PERSIST,
+                        CascadeType.MERGE
+                })
+        @JoinTable(name = "newprompttable",
+                joinColumns = { @JoinColumn(name = "prompt_id") },
+                inverseJoinColumns = { @JoinColumn(name = "prompt_id") })
+        private Set<NewChoiceTable> choice = new HashSet<>();
 
     public NewChoiceTable() {
     }
