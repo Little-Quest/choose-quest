@@ -144,21 +144,11 @@ public class UserController {
 
     //delete a currently existing user
 
-//    @DeleteMapping("/delete")
+    @DeleteMapping("/delete")
 
-//    public static void deleteUser (int userId) {
-//        String sql = "DELETE user FROM users WHERE id=%d;";
-//        sql = String.format(sql, userId);
-//
-//
-//        try {
-//            mConn.createStatement().execute(sql);
-//            return true;
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//
-//    }
+    public void deleteUser (@RequestParam String username) {
+        List<Users> deletingUser = userRepository.findByUsername(username);
+        deletingUser.remove(username);
+    }
 
 }
