@@ -3,7 +3,7 @@ package com.questing.littlequest.models;
 import javax.persistence.*;
 
     @Entity
-    @Table(name = "storytable-new")
+    @Table(name = "newstorytable")
 public class NewStoryTable {
     @Id
     @GeneratedValue

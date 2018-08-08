@@ -4,7 +4,7 @@ package com.questing.littlequest.models;
 import javax.persistence.*;
 
     @Entity
-    @Table(name = "choicetable-new")
+    @Table(name = "newchoicetable")
 public class NewChoiceTable {
     @Id
     @GeneratedValue

@@ -3,7 +3,7 @@ package com.questing.littlequest.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "prompttable-new")
+@Table(name = "newprompttable")
 public class NewPromptTable {
 
     @Id
