@@ -148,11 +148,6 @@ public class UserController {
         String sql = "DELETE user FROM users WHERE id=%d;";
         sql = String.format(sql, userId);
 
-        if () {
-
-        } else {
-            
-        }
 
         try {
             mConn.createStatement().execute(sql);
