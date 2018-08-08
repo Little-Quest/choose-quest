@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.*;
 
 @Controller
@@ -138,5 +139,28 @@ public class UserController {
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
         return "index";
+    }
+
+    //delete a currently existing user
+    @DeleteMapping("/delete")
+
+    public static void deleteUser (int userId) {
+        String sql = "DELETE user FROM users WHERE id=%d;";
+        sql = String.format(sql, userId);
+
+        if () {
+
+        } else {
+            
+        }
+
+        try {
+            mConn.createStatement().execute(sql);
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 }
