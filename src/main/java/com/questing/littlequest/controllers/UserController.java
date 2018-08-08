@@ -68,7 +68,7 @@ public class UserController {
             boolean isCorrectPassword = user.checkPassword(password);
             System.out.println("checkPassword = " + user.checkPassword(password));
             if(isCorrectPassword) {
-                mv.setViewName("story-choice");
+                mv.setViewName("redirect:/story-choice");
                 mv.addObject("username", username);
 
                 HttpSession session = request.getSession();
