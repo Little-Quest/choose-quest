@@ -48,6 +48,13 @@ li {
     list-style-type: none;
 
 }
+.story {
+    display: inline;
+}
+.about{
+    align-content: left;
+    margin-left: 3vw;
+}
 
 #entry-button {
     width: 45vw;
@@ -78,6 +85,13 @@ li {
      margin: auto;
  }
 
+#story-button {
+    width: 40vw;
+    padding:auto;
+    font-size: 2vh;
+    margin: auto;
+}
+
 .about-button {
     width: 35vw;
     padding:auto;
@@ -91,4 +105,12 @@ li {
 #tiny{
     font-size: 2vh;
     font-style: italic;
+}
+
+@media only screen and (min-width: 600px){
+    li {
+        list-style-type: none;
+        display: block;
+
+    }
 }
