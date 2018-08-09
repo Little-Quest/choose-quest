@@ -3,7 +3,6 @@ package com.questing.littlequest.controllers;
 import com.questing.littlequest.models.Choices;
 import com.questing.littlequest.models.Prompts;
 import com.questing.littlequest.models.Stories;
-import com.questing.littlequest.models.Users;
 import com.questing.littlequest.repositories.ChoiceRepository;
 import com.questing.littlequest.repositories.PromptRepository;
 import com.questing.littlequest.repositories.StoryRepository;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -44,24 +42,60 @@ public class StoryController {
 //        return "story";
 //    }
 
-    @GetMapping("/story/{id}")
-    public String displayPromptAndChoices(Model model) {
-        List<Prompts> prompts = promptRepository.findAll();
-        List<Choices> choices = choiceRepository.findAll();
+    @GetMapping("/story/{story_id}")
+    public String displayPromptAndChoices(@PathVariable int story_id, Model model) {
+        if (story_id == 1) {
+            List<Prompts> prompts = promptRepository.findAll().subList(0, 1);
+            List<Choices> choices = choiceRepository.findAll().subList(0, 1);
 
-//        Prompts storyPrompt = storyPrompt.story_id;
-//        if () {
-//        }
+            model.addAttribute("prompts", prompts);
+            model.addAttribute("choices", choices);
+        } else {
+            return "redirect:/error";
+        }
 
-        System.out.println(prompts.toString());
-        System.out.println(choices.toString());
+        return "story";
+    }
 
-        int[] numbers = {1, 2, 3};
-        model.addAttribute("numbers", numbers);
-        model.addAttribute("prompts", prompts);
-        model.addAttribute("choices", choices);
-//        model.addAttribute("promptid", prompt_id);
-//        model.addAttribute("choiceid", choice_id);
+    @GetMapping("/story/{prompt_id}/{choice_id}/{choice_ab_id}")
+    public String displayPromptAndChoices(@PathVariable int prompt_id, @PathVariable int choice_id, @PathVariable int choice_ab_id, Model model) {
+        if (prompt_id == 1) {
+            if (choice_id == 1) {
+                if (choice_ab_id == 1) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(1, 2);
+                    List<Choices> choices = choiceRepository.findAll().subList(1, 2);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                } else if (choice_ab_id == 2) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(2, 3);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                }
+            }
+        }
+
+        if (prompt_id == 2) {
+            if (choice_id == 2) {
+                if (choice_ab_id == 3) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(3, 4);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                } else if (choice_ab_id == 4) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(4, 5);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                    System.out.println("Prompt = " + prompts);
+                    System.out.println("choices = " + choices);
+                }
+            }
+        }
+
+
+
+
         return "story";
     }
 
