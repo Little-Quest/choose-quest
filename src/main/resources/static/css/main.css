@@ -23,10 +23,6 @@ nav {
     font-size: 3vh;
     color: #0D3945;
 }
-  
-text {
-    align-content: center;
-}
 
 
 a{
@@ -55,11 +51,11 @@ button {
     /*width: 15%;*/
 }
 
-li {
-    list-style-type: none;
-    display: block;
+/*li {*/
+    /*list-style-type: none;*/
+    /*display: block;*/
 
-}
+/*}*/
 
 footer{
     background-color: #FEC601;
@@ -82,7 +78,10 @@ footer{
 .about-button {
     width: 40vw;
     padding:auto;
-    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
 }
 
 .footer-menu{
@@ -108,6 +107,7 @@ footer{
     border: none;
 
 }
+
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
@@ -139,7 +139,6 @@ footer{
  }
 
 
-
 #story-button {
     width: 40vw;
     padding:auto;
@@ -156,10 +155,10 @@ footer{
     font-style: italic;
 }
 
-@media only screen and (min-width: 600px){
-    li {
-        list-style-type: none;
-        display: block;
+/*@media only screen and (min-width: 600px){*/
+    /*li {*/
+        /*list-style-type: none;*/
+        /*display: block;*/
 
-    }
-}
+    /*}*/
+/*}*/
