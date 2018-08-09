@@ -23,3 +23,4 @@ Special thanks also to Justin Whitaker for Database consultation..
 - Domain setup with Heroku docs found [here](https://devcenter.heroku.com/articles/custom-domains#view-existing-domains)
 - Logo help from [logojoy](https://logojoy.com)
 - Icon fonts from [Font Awesome](https://fontawesome.com/icons/linkedin?style=brands)
+
