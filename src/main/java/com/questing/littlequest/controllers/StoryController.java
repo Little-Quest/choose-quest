@@ -74,14 +74,15 @@ public class StoryController {
             if (choice_id == 2) {
                 if (choice_ab_id == 3) {
                     Prompts prompts = promptRepository.findAll().get(3);
-//                    Choices choices = choiceRepository.findAll().get(3);
                     model.addAttribute("prompts", prompts);
-//                    model.addAttribute("choices", choices);
+                    boolean isEnd = true;
+                    model.addAttribute("isEnd", isEnd);
                 } else if (choice_ab_id == 4) {
                     Prompts prompts = promptRepository.findAll().get(5);
-//                    Choices choices = choiceRepository.findAll().get(4);
                     model.addAttribute("prompts", prompts);
-//                    model.addAttribute("choices", choices);
+                    boolean isEnd = true;
+                    model.addAttribute("isEnd", isEnd);
+
                 }
             }
         }
