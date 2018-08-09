@@ -8,13 +8,16 @@
     box-sizing: content-box;
 }
 
+
 nav {
     background-color: #FEC601 ;
     font-size: 3vh;
+
 }
 body {
     background-color: #19647E;
     color: white;
+
     font-size: 3vh;
 }
 
@@ -23,17 +26,20 @@ a{
 }
 
 a:hover{
-    text-decoration: none;
+    text-decoration: none;  
 }
 
 a:visited{
     color: dimgrey;
+
 }
 
 img {
     align-content: center;
     display: inline-block;
+    height: auto;
 }
+
 
 button {
     background-color: #FEC601;

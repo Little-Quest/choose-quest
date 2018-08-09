@@ -31,7 +31,8 @@ Special thanks also to Justin Whitaker for Database consultation.
 - Logo help from [logojoy](https://logojoy.com)
 - Icon fonts from [Font Awesome](https://fontawesome.com/icons/linkedin?style=brands)
 
-  ### Build Components
+
+### Build Components
   - Java
   - HTML
   - CSS
@@ -40,9 +41,12 @@ Special thanks also to Justin Whitaker for Database consultation.
   - Thymeleaf
   - Postgresql
   
+
 ## Contributing
 Please see the TEAM_AGREEMENT.md for more inforamtion on our code of conduct, branch naming conventions, and work plan.
+
 
 ## License
 This project is licensed under the MIT License. Please see the LICENSE.md for more details.
   
+
