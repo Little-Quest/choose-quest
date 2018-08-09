@@ -6,22 +6,23 @@
         <meta property="og:title" content="Little Quest">
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://littlequest.us">
-        <meta property="og:description" content="Little Quest is a a short story game.">
-        <meta property="og:image" content="http://littlequest.us/images/LittleQuest_SmallLogo.tiff">
+        <meta property="og:description" content="Little Quest is a short story game.">
+        <meta property="og:image" content="http://littlequest.us/images/LQ_small.png">
 
         <title>Little Quest</title>
+
+        <!--Font Awesome library of icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- This is our custom sheet not bootstrap -->
         <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/main.css"/>
 
     </head>
     <header class="main-container">
-        <img src="static/images/LittleQuest_MedLogo.tiff">
-        <nav class ="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-light">
+        <nav class ="navbar navbar-expand-lg navbar-light">
             <div id="top-nav">
                 <a href="/">Welcome</a>
                 <a href="/portal">Entry Portal</a>
@@ -31,15 +32,17 @@
         </nav>
     </header>
     <body>
-        <h1>Welcome to Little Quest!</h1>
-        <p>We are a short story game with a "choose-your-path" style.
-            You get to decide the path of the story to the end.
+        <main class="container text-center">
+            <h1>Welcome to Little Quest!</h1>
+            <p>This is a short story game with a "choose-your-path" style.
+                You get to decide the path of the story to the end.
 
-            Sign up or login to read a story today!</p>p
-        <button type="button"><a href="/portal">Entry Portal</a></button>
-        <p>Coming soon...ways for you to save stories you've played
-            and create your own choice-oriented stories!</p>
-
+                Sign up or login to read a story today!</p>
+            <button id="entry-button" class="container btn btn-lg btn-outline-secondary btn-block" type="button"><a
+                    href="/portal">Entry Portal</a></button>
+            <p id="tiny">Coming soon...ways for you to save stories you've played
+                and create your own choice-oriented stories!</p>
+        </main>
     <footer>
         <a href="/about-us.html">About Us</a>
         <a href="/logout">Log Out</a>
