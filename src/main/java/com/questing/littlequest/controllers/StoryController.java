@@ -47,8 +47,6 @@ public class StoryController {
         if (story_id == 1) {
             List<Prompts> prompts = promptRepository.findAll().subList(0, 1);
             List<Choices> choices = choiceRepository.findAll().subList(0, 1);
-            System.out.println(prompts.toString());
-            System.out.println(choices.toString());
 
             model.addAttribute("prompts", prompts);
             model.addAttribute("choices", choices);
@@ -73,13 +71,30 @@ public class StoryController {
                     List<Choices> choices = choiceRepository.findAll().subList(2, 3);
                     model.addAttribute("prompts", prompts);
                     model.addAttribute("choices", choices);
+                }
+            }
+        }
+
+        if (prompt_id == 2) {
+            if (choice_id == 2) {
+                if (choice_ab_id == 3) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(3, 4);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                } else if (choice_ab_id == 4) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(4, 5);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
                     System.out.println("Prompt = " + prompts);
                     System.out.println("choices = " + choices);
                 }
             }
-        } else {
-            return "redirect:/error";
         }
+
+
+
 
         return "story";
     }
