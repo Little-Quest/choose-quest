@@ -19,6 +19,11 @@ body {
     font-size: 3vh;
 }
 
+text {
+    align-content: center;
+}
+
+
 a{
     color: #0D3945;
 }
