@@ -4,44 +4,34 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
-
-.container{
-    width: auto;
-
+.selector-for-some-widget {
+    box-sizing: content-box;
 }
-.navbar-toggler-icon{
-    color: #19647E;
-    height: 1rem;
-    width: 1rem;
+
+
+nav {
+    background-color: #FEC601 ;
+    font-size: 3vh;
+
 }
 body {
     background-color: #19647E;
     color: white;
-    font-size: 1.5em;
-    /*padding: 3rem;*/
+
+    font-size: 3vh;
 }
 
-nav {
-    background-color: #FEC601;
-    color: white;
-    width: auto;
-    padding: 0;
-}
-ul{
-    list-style: none;
-}
 a{
     color: white;
 }
 
-a:visited{
-    color: dimgrey;
+a:hover{
+    text-decoration: none;
 }
 
+a:visited{
+    color: dimgrey;
 
-
-.selector-for-some-widget {
-    box-sizing: content-box;
 }
 
 img {
@@ -50,43 +40,47 @@ img {
     height: auto;
 }
 
-#entry-button {
-    /*color: #19647E;*/
-    width: 44vw;
-    font-size: auto;
-    align-content: center;
-    height: auto;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    align-content: center;
-}
-
-#signin-button {
-    /*color: #19647E;*/
-    width: 30%;
-    margin:auto;
-}
-
-#register-button {
-    /*color: #19647E;*/
-    width: 25%;
-    margin:auto;
-}
-#logout-button {
-    /*color: #19647E;*/
-    width: 40%;
-    margin:auto;
-}
-
-
 
 button {
     background-color: #FEC601;
-    border-radius: inherit;
-    width: 40%;
-    /*color: white;*/
+    color: white;
     /*margin: auto;*/
     /*width: 15%;*/
+}
+
+#entry-button {
+    width: 45vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    font-size: auto;
+    align: center;
+}
+
+#signin-button {
+    width: 35vw;
+    padding:auto;
+    font-size: auto;
+    margin: auto;
+}
+
+#register-button {
+    width: 35vw;
+    padding:auto;
+    font-size: auto;
+    margin: auto;
+}
+
+#logout-button {
+     width: 35vw;
+     padding:auto;
+     font-size: auto;
+     margin: auto;
+ }
+
+.about-button {
+    width: 35vw;
+    padding:auto;
+    margin: auto;
 }
 
 #logout {
@@ -94,6 +88,6 @@ button {
 }
 
 #tiny{
-    font-size: .7em;
+    font-size: 2vh;
     font-style: italic;
 }

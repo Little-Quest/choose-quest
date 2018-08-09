@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Play Story</title>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <div th:each="prompt : ${prompts}">
+                    <span th:text="${prompt.prompt_text}" />
+                    <div th:each="choice : ${choices}">
+                        <form th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id}" method="GET">
+                            <button type="submit" ><span th:text= "${choice.choice_a_text}" /></button>
+                            <button type="submit" ><span th:text= "${choice.choice_b_text}" /></button>
+                        </form>
+                    </div>
+                </div>
+            </ul>
+        </div>
 
-</body>
+    </body>
 </html>
