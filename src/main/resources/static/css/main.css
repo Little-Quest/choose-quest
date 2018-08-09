@@ -7,17 +7,14 @@
 .selector-for-some-widget {
     box-sizing: content-box;
 }
-
-
 nav {
     background-color: #FEC601 ;
     font-size: 3vh;
-
 }
+
 body {
     background-color: #19647E;
     color: white;
-
     font-size: 3vh;
 }
 
@@ -40,12 +37,16 @@ img {
     height: auto;
 }
 
-
 button {
     background-color: #FEC601;
     color: white;
     /*margin: auto;*/
     /*width: 15%;*/
+}
+
+li {
+    list-style-type: none;
+
 }
 
 #entry-button {
