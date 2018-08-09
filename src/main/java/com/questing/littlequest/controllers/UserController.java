@@ -73,6 +73,8 @@ public class UserController {
 
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedin", true);
+                session.setAttribute("username", username);
+                session.getAttribute(username);
             } else {
                 mv.setViewName("login-error");
                 mv.addObject("error", "Wrong password. Try again.");
@@ -106,7 +108,7 @@ public class UserController {
 
         HttpSession session = request.getSession();
         session.setAttribute("loggedin", true);
-
+        session.setAttribute("username", username);
         model.addAttribute("username", username);
         mv.setViewName("redirect:/story-choice");
         return mv;
@@ -143,12 +145,17 @@ public class UserController {
     }
 
     //delete a currently existing user
+    @GetMapping("/delete")
+    public String deleteUser (@RequestParam String username, HttpServletRequest request) {
+//        HttpSession session = request.getSession();
+//        username = (String) session.getAttribute("username");
 
-    @DeleteMapping("/delete")
+        List<Users> du1 = userRepository.removeByUsername(username);
+        System.out.println("DU1 = " + du1);
 
-    public void deleteUser (@RequestParam String username) {
-        List<Users> deletingUser = userRepository.findByUsername(username);
-        deletingUser.remove(username);
+        String du2 = userRepository.deleteByUsername(username);
+        System.out.println("DU2 = " + du2);
+
+        return "redirect:/";
     }
-
 }
