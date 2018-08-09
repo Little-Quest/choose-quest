@@ -3,7 +3,6 @@ package com.questing.littlequest.controllers;
 import com.questing.littlequest.models.Choices;
 import com.questing.littlequest.models.Prompts;
 import com.questing.littlequest.models.Stories;
-import com.questing.littlequest.models.Users;
 import com.questing.littlequest.repositories.ChoiceRepository;
 import com.questing.littlequest.repositories.PromptRepository;
 import com.questing.littlequest.repositories.StoryRepository;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -45,23 +43,19 @@ public class StoryController {
 //    }
 
     @GetMapping("/story/{id}")
-    public String displayPromptAndChoices(Model model) {
-        List<Prompts> prompts = promptRepository.findAll();
-        List<Choices> choices = choiceRepository.findAll();
+    public String displayPromptAndChoices(@PathVariable int id, Model model) {
+        if (id == 1) {
+            List<Prompts> prompts = promptRepository.findAll().subList(0, 1);
+            List<Choices> choices = choiceRepository.findAll().subList(0, 1);
+            System.out.println(prompts.toString());
+            System.out.println(choices.toString());
 
-//        Prompts storyPrompt = storyPrompt.story_id;
-//        if () {
-//        }
+            model.addAttribute("prompts", prompts);
+            model.addAttribute("choices", choices);
 
-        System.out.println(prompts.toString());
-        System.out.println(choices.toString());
+        }
 
-        int[] numbers = {1, 2, 3};
-        model.addAttribute("numbers", numbers);
-        model.addAttribute("prompts", prompts);
-        model.addAttribute("choices", choices);
-//        model.addAttribute("promptid", prompt_id);
-//        model.addAttribute("choiceid", choice_id);
+
         return "story";
     }
 
