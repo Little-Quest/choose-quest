@@ -57,6 +57,10 @@ button {
 
 /*}*/
 
+.choice-form {
+    margin-top: 1.5em;
+}
+
 footer{
     background-color: #FEC601;
     position: absolute;

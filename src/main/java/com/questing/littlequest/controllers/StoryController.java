@@ -37,16 +37,11 @@ public class StoryController {
         return "story-choice";
     }
 
-//    @GetMapping("/story")
-//    public String storyRedirect() {
-//        return "story";
-//    }
-
     @GetMapping("/story/{story_id}")
     public String displayPromptAndChoices(@PathVariable int story_id, Model model) {
         if (story_id == 1) {
-            List<Prompts> prompts = promptRepository.findAll().subList(0, 1);
-            List<Choices> choices = choiceRepository.findAll().subList(0, 1);
+            Prompts prompts = promptRepository.findAll().get(0);
+            Choices choices = choiceRepository.findAll().get(0);
 
             model.addAttribute("prompts", prompts);
             model.addAttribute("choices", choices);
@@ -62,13 +57,13 @@ public class StoryController {
         if (prompt_id == 1) {
             if (choice_id == 1) {
                 if (choice_ab_id == 1) {
-                    List<Prompts> prompts = promptRepository.findAll().subList(1, 2);
-                    List<Choices> choices = choiceRepository.findAll().subList(1, 2);
+                    Prompts prompts = promptRepository.findAll().get(1);
+                    Choices choices = choiceRepository.findAll().get(1);
                     model.addAttribute("prompts", prompts);
                     model.addAttribute("choices", choices);
                 } else if (choice_ab_id == 2) {
-                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
-                    List<Choices> choices = choiceRepository.findAll().subList(2, 3);
+                    Prompts prompts = promptRepository.findAll().get(2);
+                    Choices choices = choiceRepository.findAll().get(2);
                     model.addAttribute("prompts", prompts);
                     model.addAttribute("choices", choices);
                 }
@@ -78,21 +73,34 @@ public class StoryController {
         if (prompt_id == 2) {
             if (choice_id == 2) {
                 if (choice_ab_id == 3) {
-                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
-                    List<Choices> choices = choiceRepository.findAll().subList(3, 4);
+                    Prompts prompts = promptRepository.findAll().get(3);
+//                    Choices choices = choiceRepository.findAll().get(3);
                     model.addAttribute("prompts", prompts);
-                    model.addAttribute("choices", choices);
+//                    model.addAttribute("choices", choices);
                 } else if (choice_ab_id == 4) {
-                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
-                    List<Choices> choices = choiceRepository.findAll().subList(4, 5);
+                    Prompts prompts = promptRepository.findAll().get(5);
+//                    Choices choices = choiceRepository.findAll().get(4);
                     model.addAttribute("prompts", prompts);
-                    model.addAttribute("choices", choices);
-                    System.out.println("Prompt = " + prompts);
-                    System.out.println("choices = " + choices);
+//                    model.addAttribute("choices", choices);
                 }
             }
         }
 
+        if (prompt_id == 3) {
+            if (choice_id == 3) {
+                if (choice_ab_id == 5) {
+                    Prompts prompts = promptRepository.findAll().get(4);
+//                    Choices choices = choiceRepository.findAll().get(3);
+                    model.addAttribute("prompts", prompts);
+//                    model.addAttribute("choices", choices);
+                } else if (choice_ab_id == 6) {
+                    Prompts prompts = promptRepository.findAll().get(3);
+//                    Choices choices = choiceRepository.findAll().get(4);
+                    model.addAttribute("prompts", prompts);
+//                    model.addAttribute("choices", choices);
+                }
+            }
+        }
 
 
 
