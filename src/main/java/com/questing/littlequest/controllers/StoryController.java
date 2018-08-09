@@ -3,6 +3,7 @@ package com.questing.littlequest.controllers;
 import com.questing.littlequest.models.Choices;
 import com.questing.littlequest.models.Prompts;
 import com.questing.littlequest.models.Stories;
+import com.questing.littlequest.models.Users;
 import com.questing.littlequest.repositories.ChoiceRepository;
 import com.questing.littlequest.repositories.PromptRepository;
 import com.questing.littlequest.repositories.StoryRepository;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,5 +63,12 @@ public class StoryController {
 //        model.addAttribute("promptid", prompt_id);
 //        model.addAttribute("choiceid", choice_id);
         return "story";
+    }
+
+    //graceful error
+    @GetMapping("/error")
+    public String error(HttpServletRequest request) {
+
+        return "redirect:/error";
     }
 }

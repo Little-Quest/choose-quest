@@ -7,17 +7,14 @@
 .selector-for-some-widget {
     box-sizing: content-box;
 }
-
-
 nav {
     background-color: #FEC601 ;
     font-size: 3vh;
-
 }
+
 body {
     background-color: #19647E;
     color: white;
-
     font-size: 3vh;
 }
 
@@ -26,7 +23,7 @@ a{
 }
 
 a:hover{
-    text-decoration: none;
+    text-decoration: none;  
 }
 
 a:visited{
@@ -40,12 +37,23 @@ img {
     height: auto;
 }
 
-
 button {
     background-color: #FEC601;
     color: white;
     /*margin: auto;*/
     /*width: 15%;*/
+}
+
+li {
+    list-style-type: none;
+
+}
+.story {
+    display: inline;
+}
+.about{
+    align-content: left;
+    margin-left: 3vw;
 }
 
 #entry-button {
@@ -77,6 +85,13 @@ button {
      margin: auto;
  }
 
+#story-button {
+    width: 40vw;
+    padding:auto;
+    font-size: 2vh;
+    margin: auto;
+}
+
 .about-button {
     width: 35vw;
     padding:auto;
@@ -90,4 +105,12 @@ button {
 #tiny{
     font-size: 2vh;
     font-style: italic;
+}
+
+@media only screen and (min-width: 600px){
+    li {
+        list-style-type: none;
+        display: block;
+
+    }
 }

@@ -3,20 +3,53 @@
 
     <head>
         <title>Story Selection</title>
+        <!--Font Awesome library of icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- This is our custom sheet not bootstrap -->
+        <link rel="stylesheet" href="/css/main.css" />
+
     </head>
+    <header class="main-container">
+        <nav class ="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars">  </i> Navigation</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="navbar-toggler"><a href="/">Welcome Home</a></li>
+                    <!--<li class="navbar-toggler"><a href="/portal">Entry Portal</a></li>-->
+                    <li class="navbar-toggler"><a href="/about-us.html">About Us</a></li>
+                    <li class="navbar-toggler"><a href="/portal">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <body>
-      <h1>Choose your quest</h1>
-        <div>
-            <ul>
-                <li th:each= "story : ${stories}">
+    <main>
+        <h3>Choose your quest</h3>
+        <ul>
+            <li th:each= "story : ${stories}">
 
-                    <form th:action="'/story/' + ${story.story_id}" method="GET">
-                        <button id="story-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit"><span th:text= "${story.title}" /></button>
-                    </form>
+                <form th:action="'/story/' + ${story.story_id}" method="GET">
+                    <span th:text= "${story.title}" />
+                    <button id="story-button" class="btn btn-lg btn-outline-secondary btn-block"
+                            type="submit">Start Quest</button>
+                </form>
+                    <p>The Egg King</p>
+                    <button id="story-button" class="btn btn-lg btn-outline-secondary btn-block">Start
+                        Quest</button>
 
-                </li>
-            </ul>
-        </div>
+            </li>
+        </ul>
+        </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     </body>
 
 </html>

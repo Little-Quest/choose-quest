@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
     <head>
-        <title>Welcome</title>
+        <meta description="Little Quest Portal">
+        <meta charset="UTF-8">
+        <meta property="og:title" content="Little Quest Portal">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://littlequest.us/portal">
+
+        <meta property="og:description" content="Little Quest is a short story game.">
+        <meta property="og:image" content="http://littlequest.us/images/LQ_small.png">
+
+        <title>Entry Portal</title>
+        <!--Font Awesome library of icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- This is our custom sheet not bootstrap -->
         <link rel="stylesheet" href="/css/main.css" />
-
     </head>
+    <header class="main-container">
+        <nav class ="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars">  </i> Navigation</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="navbar-toggler"><a href="/">Welcome Home</a></li>
+                    <!--<li class="navbar-toggler"><a href="/portal">Entry Portal</a></li>-->
+                    <li class="navbar-toggler"><a href="/about-us.html">About Us</a></li>
+                    <li class="navbar-toggler"><a href="/portal">Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
 
             <!--<div>-->
 
@@ -25,8 +50,8 @@
             <!--</p>-->
 
             <!--</div>-->
-    <body class="text-center">
-            <main>
+    <body>
+        <main class="container text-center">
                 <!--<div th:if="${username != 'username'}">-->
                 <div id="login">
                     <h2>Login</h2>
