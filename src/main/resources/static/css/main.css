@@ -4,22 +4,25 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
-.selector-for-some-widget {
-    box-sizing: content-box;
+html{
+    position: relative;
+    min-height: 100%;
 }
-nav {
-    background-color: #FEC601 ;
-    font-size: 3vh;
-}
-
 body {
     background-color: #19647E;
     color: white;
     font-size: 3vh;
+    /*margin-bottom: 60px;*/
+}
+
+nav {
+    background-color: #FEC601 ;
+    font-size: 3vh;
+    color: #0D3945;
 }
 
 a{
-    color: white;
+    color: #0D3945;
 }
 
 a:hover{
@@ -27,8 +30,8 @@ a:hover{
 }
 
 a:visited{
-    color: dimgrey;
-
+    color: #0D3945;
+    text-decoration: none;
 }
 
 img {
@@ -39,23 +42,64 @@ img {
 
 button {
     background-color: #FEC601;
-    color: white;
+    color: #0D3945;
     /*margin: auto;*/
     /*width: 15%;*/
 }
 
 li {
     list-style-type: none;
+    display: block;
 
 }
+
+footer{
+    background-color: #FEC601;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2vh;
+    padding: 1vh;
+}
+
 .story {
     display: inline;
 }
+
 .about{
     align-content: left;
     margin-left: 3vw;
 }
 
+.about-button {
+    width: 40vw;
+    padding:auto;
+    margin: auto;
+}
+
+.footer-menu{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-menu li{
+    display: inline;
+    margin: 0 3vw;
+}
+
+.footer-menu form{
+    display: inline;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+#deleteform button{
+    border: none;
+
+}
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
@@ -75,14 +119,14 @@ li {
     width: 35vw;
     padding:auto;
     font-size: auto;
-    margin: auto;
+    margin:0 auto 4vh auto;
 }
 
 #logout-button {
      width: 35vw;
      padding:auto;
      font-size: auto;
-     margin: auto;
+     margin: 4vh auto 8vh auto;
  }
 
 #story-button {
@@ -92,14 +136,8 @@ li {
     margin: auto;
 }
 
-.about-button {
-    width: 35vw;
-    padding:auto;
-    margin: auto;
-}
-
 #logout {
-    margin-top: 4em;
+    /*margin-top: 4em;*/
 }
 
 #tiny{
