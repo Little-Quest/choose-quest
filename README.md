@@ -1,3 +1,4 @@
+![Little Quest Logo](static/images/LQ_small.png)
 # Little-Quest
 http://littlequest.us/
 
@@ -32,21 +33,29 @@ Special thanks also to Justin Whitaker for Database consultation.
 - Icon fonts from [Font Awesome](https://fontawesome.com/icons/linkedin?style=brands)
 
 
-### Build Components
-  - Java
-  - HTML
-  - CSS
-  - Spring Boot
+### Technology used
+  - Java 1.8
+  - HTML 5
+  - CSS 1.0, 3.0
+  - Bootstrap
+  - SpringBoot MVC
+  - Gradle
   - JPA
   - Thymeleaf
   - Postgresql
+  - IntellJ Ultimate
+  - Portico
+  - Git
+  - GitHub
+  - Homebrew
+  
   
 
 ## Contributing
-Please see the TEAM_AGREEMENT.md for more inforamtion on our code of conduct, branch naming conventions, and work plan.
+Please see the [TEAM_AGREEMENT.md](TEAM_AGREEMENT.md) for more information about our workflow and processes.
 
 
 ## License
-This project is licensed under the MIT License. Please see the LICENSE.md for more details.
+This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) for more details.
   
 

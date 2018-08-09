@@ -4,21 +4,26 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
-.selector-for-some-widget {
-    box-sizing: content-box;
-}
-nav {
-    background-color: #FEC601 ;
-    font-size: 3vh;
-    color: #0D3945;
+
+html{
+    position: relative;
+    min-height: 100%;
+
 }
 
 body {
     background-color: #19647E;
     color: white;
     font-size: 3vh;
+    /*margin-bottom: 60px;*/
 }
 
+nav {
+    background-color: #FEC601 ;
+    font-size: 3vh;
+    color: #0D3945;
+}
+  
 text {
     align-content: center;
 }
@@ -95,6 +100,10 @@ footer{
     display: inline;
 }
 
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
 #deleteform button{
     border: none;
 
@@ -118,15 +127,18 @@ footer{
     width: 35vw;
     padding:auto;
     font-size: auto;
-    margin: auto;
+    margin:0 auto 4vh auto;
 }
 
 #logout-button {
-    width: 35vw;
-    padding:auto;
-    font-size: auto;
-    margin: auto;
-}
+
+     width: 35vw;
+     padding:auto;
+     font-size: auto;
+     margin: 4vh auto 8vh auto;
+ }
+
+
 
 #story-button {
     width: 40vw;
@@ -136,7 +148,7 @@ footer{
 }
 
 #logout {
-    margin-top: 4em;
+    /*margin-top: 4em;*/
 }
 
 #tiny{
