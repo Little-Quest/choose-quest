@@ -4,10 +4,13 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
+
 html{
     position: relative;
     min-height: 100%;
+
 }
+
 body {
     background-color: #19647E;
     color: white;
@@ -20,13 +23,18 @@ nav {
     font-size: 3vh;
     color: #0D3945;
 }
+  
+text {
+    align-content: center;
+}
+
 
 a{
     color: #0D3945;
 }
 
 a:hover{
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 a:visited{
@@ -123,11 +131,14 @@ footer{
 }
 
 #logout-button {
+
      width: 35vw;
      padding:auto;
      font-size: auto;
      margin: 4vh auto 8vh auto;
  }
+
+
 
 #story-button {
     width: 40vw;
