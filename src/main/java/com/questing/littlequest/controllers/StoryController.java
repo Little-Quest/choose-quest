@@ -37,11 +37,6 @@ public class StoryController {
         return "story-choice";
     }
 
-//    @GetMapping("/story")
-//    public String storyRedirect() {
-//        return "story";
-//    }
-
     @GetMapping("/story/{story_id}")
     public String displayPromptAndChoices(@PathVariable int story_id, Model model) {
         if (story_id == 1) {
