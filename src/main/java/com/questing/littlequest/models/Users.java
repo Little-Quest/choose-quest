@@ -39,4 +39,8 @@ public class Users {
         boolean result = BCrypt.checkpw(attempt, this.passhash);
         return result;
     }
+
+    public void deleteUser(String username) {
+        username = null;
+    }
 }

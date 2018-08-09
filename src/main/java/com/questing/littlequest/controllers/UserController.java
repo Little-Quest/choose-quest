@@ -43,10 +43,11 @@ public class UserController {
     }
 
     //Log in a returning user
+//    @ModelAttribute("user_id")
     @PostMapping("/login")
     public ModelAndView login(
             HttpServletRequest request,
-//           @PathVariable("id") Long id,
+//           @PathVariable("user_id") Long user_id,
             @RequestParam String username,
             @RequestParam String password
     ) {
@@ -73,6 +74,10 @@ public class UserController {
 
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedin", true);
+                session.setAttribute("username", username);
+                session.setAttribute("user_id", user.user_id);
+                session.setAttribute("user", user);
+
             } else {
                 mv.setViewName("login-error");
                 mv.addObject("error", "Wrong password. Try again.");
@@ -102,13 +107,15 @@ public class UserController {
         String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
         Users user = userRepository.save(new Users(username, passhash));
         System.out.println("Succesfully added user: " + username);
-        mv.setViewName("story-choice");
+
+        mv.setViewName("redirect:/story-choice");
+        mv.addObject("username", username);
 
         HttpSession session = request.getSession();
         session.setAttribute("loggedin", true);
-
-        model.addAttribute("username", username);
-        mv.setViewName("redirect:/story-choice");
+        session.setAttribute("username", username);
+        session.setAttribute("user_id", user.user_id);
+        session.setAttribute("user", user);
         return mv;
     }
 
@@ -116,7 +123,6 @@ public class UserController {
     public String logout(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         session.setAttribute("loggedin", false);
-
 
         //Once a user has been logged out(as opposed to never having visited), the user name will be set to
         //"user" so it will work with the thymleaf template
@@ -143,12 +149,20 @@ public class UserController {
     }
 
     //delete a currently existing user
+    @GetMapping("/delete")
+//    public String deleteUser (@RequestParam String username, @RequestParam String password, HttpServletRequest request) {
+    public String deleteUser (HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        Long userid = (Long) session.getAttribute("user_id");
+        Users user = (Users) session.getAttribute("user");
 
-    @DeleteMapping("/delete")
+        List<Users> du1 = userRepository.removeByUsername(user.username);
+        System.out.println("DU1 = " + du1);
 
-    public void deleteUser (@RequestParam String username) {
-        List<Users> deletingUser = userRepository.findByUsername(username);
-        deletingUser.remove(username);
+        String du2 = userRepository.deleteByUsername(user.username);
+        System.out.println("DU2 = " + du2);
+
+        return "redirect:/";
     }
-
 }
