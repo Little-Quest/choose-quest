@@ -42,9 +42,9 @@ public class StoryController {
 //        return "story";
 //    }
 
-    @GetMapping("/story/{id}")
-    public String displayPromptAndChoices(@PathVariable int id, Model model) {
-        if (id == 1) {
+    @GetMapping("/story/{story_id}")
+    public String displayPromptAndChoices(@PathVariable int story_id, Model model) {
+        if (story_id == 1) {
             List<Prompts> prompts = promptRepository.findAll().subList(0, 1);
             List<Choices> choices = choiceRepository.findAll().subList(0, 1);
             System.out.println(prompts.toString());
@@ -52,9 +52,32 @@ public class StoryController {
 
             model.addAttribute("prompts", prompts);
             model.addAttribute("choices", choices);
-
+        } else {
+            return "redirect:/error";
         }
 
+        return "story";
+    }
+
+    @GetMapping("/story/{prompt_id}/{choice_id}/{choice_ab_id}")
+    public String displayPromptAndChoices(@PathVariable int prompt_id, @PathVariable int choice_id, @PathVariable int choice_ab_id, Model model) {
+        if (prompt_id == 1) {
+            if (choice_ab_id == 1) {
+                if (choice_ab_id == 1) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(1, 2);
+                    List<Choices> choices = choiceRepository.findAll().subList(1, 2);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                } else if (choice_ab_id == 2) {
+                    List<Prompts> prompts = promptRepository.findAll().subList(2, 3);
+                    List<Choices> choices = choiceRepository.findAll().subList(2, 3);
+                    model.addAttribute("prompts", prompts);
+                    model.addAttribute("choices", choices);
+                }
+            }
+        } else {
+            return "redirect:/error";
+        }
 
         return "story";
     }

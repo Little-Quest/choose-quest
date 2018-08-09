@@ -14,6 +14,9 @@ public class Choices {
     public Long prompt_id;
     public String choice_a_text;
     public String choice_b_text;
+    public Long choice_a_id;
+    public Long choice_b_id;
+
 
 
 
@@ -24,11 +27,13 @@ public class Choices {
     public Choices() {
     }
 
-    public Choices(Long story_id, Long prompt_id, String choice_a_text, String choice_b_text) {
+    public Choices(Long story_id, Long prompt_id, String choice_a_text, String choice_b_text, Long choice_a_id, Long choice_b_id) {
         this.story_id = story_id;
         this.prompt_id = prompt_id;
         this.choice_a_text = choice_a_text;
         this.choice_b_text = choice_b_text;
+        this.choice_a_id = choice_a_id;
+        this.choice_b_id = choice_b_id;
     }
 
     public String toString() {

@@ -36,10 +36,12 @@
                 <div th:each="prompt : ${prompts}">
                     <p th:text="${prompt.prompt_text}"><p></p>
                     <div th:each="choice : ${choices}">
-                        <form th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id}" method="GET">
+                        <form th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_a_id}" method="GET">
                             <li class="story"><span th:text= "${choice.choice_a_text}" /><p><button
                                     class="btn btn-lg btn-outline-secondary btn-block" id="story-button" type="submit"
                             >Go This Way</button></p></li>
+                        </form>
+                        <form th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_b_id}" method="GET">
                             <li class="story"><span th:text= "${choice.choice_b_text}" /><p><button
                                     class="btn btn-lg btn-outline-secondary btn-block" id="story-button" type="submit">Go
                                 That Way</button></p></li>
