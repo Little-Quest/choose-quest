@@ -62,7 +62,7 @@ public class StoryController {
     @GetMapping("/story/{prompt_id}/{choice_id}/{choice_ab_id}")
     public String displayPromptAndChoices(@PathVariable int prompt_id, @PathVariable int choice_id, @PathVariable int choice_ab_id, Model model) {
         if (prompt_id == 1) {
-            if (choice_ab_id == 1) {
+            if (choice_id == 1) {
                 if (choice_ab_id == 1) {
                     List<Prompts> prompts = promptRepository.findAll().subList(1, 2);
                     List<Choices> choices = choiceRepository.findAll().subList(1, 2);
@@ -73,6 +73,8 @@ public class StoryController {
                     List<Choices> choices = choiceRepository.findAll().subList(2, 3);
                     model.addAttribute("prompts", prompts);
                     model.addAttribute("choices", choices);
+                    System.out.println("Prompt = " + prompts);
+                    System.out.println("choices = " + choices);
                 }
             }
         } else {
