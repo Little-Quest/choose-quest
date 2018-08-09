@@ -123,7 +123,7 @@ public class UserController {
     public String logout(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         session.setAttribute("loggedin", false);
-        
+
         //Once a user has been logged out(as opposed to never having visited), the user name will be set to
         //"user" so it will work with the thymleaf template
         String username = (String) session.getAttribute("username");
