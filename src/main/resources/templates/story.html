@@ -40,6 +40,7 @@
                 <div th:each="prompt : ${prompts}">
                     <p th:text="${prompt.prompt_text}"><p></p>
                     <div th:each="choice : ${choices}">
+
                         <form class="choice-form" th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_a_id}" method="GET">
                             <li class="story"><span th:text= "${choice.choice_a_text}" /><p><button
                                     class="btn btn-lg btn-outline-secondary btn-block" id="story-button" type="submit"
@@ -52,6 +53,13 @@
                         </form>
                     </div>
                 </div>
+
+                <div th:if="${isEnd} == true">
+                    <form action="/story-choice" method="GET">
+                    <button type="submit">Play Again</button>
+                    </form>
+                </div>
+
             </ul>
         </div>
     </section>

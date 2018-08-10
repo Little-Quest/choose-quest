@@ -23,6 +23,7 @@ public class UserController {
     @GetMapping("/portal")
     public String portalPage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
+        System.out.println("session = " + session);
         String username = (String) session.getAttribute("username");
 
         //I wanted a more meaningful and easily read console log to follow the program through
@@ -31,9 +32,19 @@ public class UserController {
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
         //Only change the value of username to "user" if the logged in session is false/null
-        if (session.getAttribute("loggedin") == null) {
-            model.addAttribute("username", "user");
+        Object rawIsLoggedIn = session.getAttribute("loggedin");
+        boolean isLoggedIn = false;
+        if (rawIsLoggedIn != null) {
+            isLoggedIn = (boolean) rawIsLoggedIn;
         }
+
+        if (!isLoggedIn) {
+            model.addAttribute("username", "user");
+            model.addAttribute("isLoggedIn", isLoggedIn);
+        } else {
+            model.addAttribute("isLoggedIn", isLoggedIn);
+        }
+
         //If the session is null, the user name will be set to user. If the session above is not null, then
         //the username will persist from the previous session.
         if (username != null) {
@@ -47,9 +58,9 @@ public class UserController {
     @PostMapping("/login")
     public ModelAndView login(
             HttpServletRequest request,
-//           @PathVariable("user_id") Long user_id,
             @RequestParam String username,
-            @RequestParam String password
+            @RequestParam String password,
+            Model model
     ) {
         ModelAndView mv = new ModelAndView();
 
@@ -77,6 +88,9 @@ public class UserController {
                 session.setAttribute("username", username);
                 session.setAttribute("user_id", user.user_id);
                 session.setAttribute("user", user);
+
+                boolean isLoggedIn = true;
+                model.addAttribute("isLoggedIn", isLoggedIn);
 
             } else {
                 mv.setViewName("login-error");
@@ -116,6 +130,10 @@ public class UserController {
         session.setAttribute("username", username);
         session.setAttribute("user_id", user.user_id);
         session.setAttribute("user", user);
+
+        boolean isLoggedIn = true;
+        model.addAttribute("isLoggedIn", isLoggedIn);
+
         return mv;
     }
 
@@ -131,6 +149,8 @@ public class UserController {
         if (!isLoggedIn) {
             username = "user";
             model.addAttribute("username", "user");
+            model.addAttribute("isLoggedIn", isLoggedIn);
+
         }
 
         //Once the username is not null (as it would be if the visitor has never visited before)
@@ -138,6 +158,7 @@ public class UserController {
         //to get the information it needs for proper user info
         if (username != null) {
             model.addAttribute("username", username);
+//            model.addAttribute("isLoggedIn", isLoggedIn);
         }
 
         //I wanted a more meaningful and easily read console log to follow the program through
@@ -145,13 +166,31 @@ public class UserController {
                 + "Session ID: " + session.getId() + " for User " + "\"" + username + "\""
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
+        model.addAttribute("isLoggedIn", isLoggedIn);
         return "index";
     }
 
     //delete a currently existing user
+//    @GetMapping("/delete")
+//    public String deleteUser (HttpServletRequest request) {
+//        HttpSession session = request.getSession();
+//        String username = (String) session.getAttribute("username");
+//        Long userid = (Long) session.getAttribute("user_id");
+//        Users user = (Users) session.getAttribute("user");
+//
+//        List<Users> du1 = userRepository.removeByUsername(user.username);
+//        System.out.println("DU1 = " + du1);
+//
+//        String du2 = userRepository.deleteByUsername(user.username);
+//        System.out.println("DU2 = " + du2);
+//
+//        return "redirect:/portal";
+//    }
+
     @GetMapping("/delete")
-//    public String deleteUser (@RequestParam String username, @RequestParam String password, HttpServletRequest request) {
-    public String deleteUser (HttpServletRequest request) {
+    public ModelAndView deleteUser (HttpServletRequest request, Model model) {
+        ModelAndView mv = new ModelAndView();
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Long userid = (Long) session.getAttribute("user_id");
@@ -163,6 +202,13 @@ public class UserController {
         String du2 = userRepository.deleteByUsername(user.username);
         System.out.println("DU2 = " + du2);
 
-        return "redirect:/";
+        mv.setViewName("delete");
+        mv.addObject("error", "Please click the button below to verify you wish to be erased from our users list completely. We'll miss you! Register again if you'd like to come back.");
+
+        boolean isLoggedIn = false;
+        model.addAttribute("isLoggedIn", isLoggedIn);
+
+        return mv;
     }
+
 }

@@ -37,27 +37,40 @@
             </nav>
         </header>
         <main class="container text-center">
-            <div id="login">
-            <h2>Login</h2>
-                <form action="/login" method="POST" class="form-signin">
-                    <div class="form-label-group"><label><input type="text" name="username" class="form-control"  placeholder="Username"  required autofocus/></label></div>
-                    <div class="form-label-group"><label><input type="password" name="password" class="form-control"  placeholder="Password"  required autofocus/></label></div>
-                    <button id="signin-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Sign In</button>
-                </form>
+            <div th:if="${isLoggedIn} == false">
+                <div id="login">
+                <h2>Login</h2>
+                    <form action="/login" method="POST" class="form-signin">
+                        <div class="form-label-group"><label><input type="text" name="username" class="form-control"  placeholder="Username"  required autofocus/></label></div>
+                        <div class="form-label-group"><label><input type="password" name="password" class="form-control"  placeholder="Password"  required autofocus/></label></div>
+                        <button id="signin-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Sign In</button>
+                    </form>
+                </div>
+                <div id="register">
+                <h2>Sign Up</h2>
+                    <form action="/register" method="POST" class="form-signin">
+                        <div class="form-label-group"><label><input type="text" name="username" class="form-control"  placeholder="Username"  required autofocus/></label></div>
+                        <div class="form-label-group"><label><input type="password" name="password" class="form-control"  placeholder="Password"  required autofocus/></label></div>
+                        <button id="register-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Register</button>
+                    </form>
+                </div>
             </div>
-            <div id="register">
-            <h2>Sign Up</h2>
-                <form action="/register" method="POST" class="form-signin">
-                    <div class="form-label-group"><label><input type="text" name="username" class="form-control"  placeholder="Username"  required autofocus/></label></div>
-                    <div class="form-label-group"><label><input type="password" name="password" class="form-control"  placeholder="Password"  required autofocus/></label></div>
-                    <button id="register-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Register</button>
-                </form>
-            </div>
+
+            <div th:if="${isLoggedIn} == true">
+
             <div id="logout" class="container">
                 <form action="/logout" method="POST">
                     <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Log Out</button>
                 </form>
             </div>
+
+                <div>
+                    <form action="/story-choice" method="GET">
+                        <button type="submit">Select Story</button>
+                    </form>
+                </div>
+            </div>
+
         </main>
         <footer class="footer">
             <div class="container">

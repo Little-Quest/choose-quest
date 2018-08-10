@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Login Error</title>
+        <title>Delete Yourself</title>
         <!--Font Awesome library of icons-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
@@ -34,7 +34,7 @@
         </nav>
     </header>
     <main>
-        <h1>Error</h1>
+        <h1>Caution: This Will Delete You</h1>
         <p th:text="${error}"></p>
         <div th:if="${isLoggedIn} == false">
             <form action="/logout" method="POST">
