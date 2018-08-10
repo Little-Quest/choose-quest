@@ -4,11 +4,9 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
-
 html{
     position: relative;
     min-height: 100%;
-
 }
 
 body {
@@ -24,7 +22,6 @@ nav {
     color: #0D3945;
 }
 
-
 a{
     color: #0D3945;
 }
@@ -38,10 +35,15 @@ a:visited{
     text-decoration: none;
 }
 
+main section{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
 img {
     align-content: center;
     display: inline-block;
     height: auto;
+    margin: 2vw;
 }
 
 button {
@@ -51,14 +53,14 @@ button {
     /*width: 15%;*/
 }
 
-/*li {*/
-    /*list-style-type: none;*/
-    /*display: block;*/
+h1{
+    margin-top: 3vh;
+}
 
-/*}*/
+li {
+    list-style-type: none;
+    display: block;
 
-.choice-form {
-    margin-top: 1.5em;
 }
 
 footer{
@@ -70,22 +72,19 @@ footer{
     padding: 1vh;
 }
 
-.story {
-    display: inline;
-}
-
-.about{
-    align-content: left;
-    margin-left: 3vw;
-}
+/*.about{*/
+    /*align-content: left;*/
+    /*margin-left: 3vw;*/
+/*}*/
 
 .about-button {
     width: 40vw;
     padding:auto;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
+    margin: 2vh auto 2vh auto;
+}
+
+.choice-form {
+    margin-top: 1.5em;
 }
 
 .footer-menu{
@@ -103,15 +102,25 @@ footer{
     display: inline;
 }
 
+.last-buttons{
+    margin-bottom: 8vh;
+}
+
 .selector-for-some-widget {
     box-sizing: content-box;
+}
+
+.story {
+    display: inline;
 }
 
 #deleteform button{
     border: none;
 
 }
-
+#end-button{
+    margin-bottom: 4vh;
+}
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
@@ -120,11 +129,16 @@ footer{
     align: center;
 }
 
-#signin-button {
+#logout {
+    /*margin-top: 4em;*/
+}
+
+#logout-button {
+
     width: 35vw;
     padding:auto;
     font-size: auto;
-    margin: auto;
+    margin: 4vh auto 8vh auto;
 }
 
 #register-button {
@@ -134,14 +148,12 @@ footer{
     margin:0 auto 4vh auto;
 }
 
-#logout-button {
-
-     width: 35vw;
-     padding:auto;
-     font-size: auto;
-     margin: 4vh auto 8vh auto;
- }
-
+#signin-button {
+    width: 35vw;
+    padding:auto;
+    font-size: auto;
+    margin: auto;
+}
 
 #story-button {
     width: 40vw;
@@ -150,10 +162,11 @@ footer{
     margin: auto;
 }
 
-#logout {
-    /*margin-top: 4em;*/
-}
+#special-spacer{
+    line-height: 5vh;
+    margin-bottom: 10vh;
 
+}
 #tiny{
     font-size: 2vh;
     font-style: italic;
