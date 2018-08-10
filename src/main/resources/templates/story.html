@@ -19,11 +19,8 @@
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Welcome Home</a>
+                        <a class="nav-link" href="/">Return Home</a>
                     </li>
-                    <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="/portal">Entry Portal</a>-->
-                    <!--</li>-->
                     <li class="nav-item">
                         <a class="nav-link" href="/about-us.html">About Us</a>
                     </li>
@@ -32,23 +29,24 @@
                     </li>
                 </ul>
             </div>
+            <!--<img class="navbar-brand" src="images/LQ_tiny.png"/>-->
         </nav>
     </header>
-    <section>
+    <section id="story-path-section">
         <div>
             <ul>
                 <div th:each="prompt : ${prompts}">
-                    <p th:text="${prompt.prompt_text}"><p></p>
+                    <p id="prompt" th:text="${prompt.prompt_text}"><p></p>
                     <div th:each="choice : ${choices}">
 
                         <form class="choice-form" th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_a_id}" method="GET">
                             <li class="story"><span th:text= "${choice.choice_a_text}" /><p><button
-                                    class="btn btn-lg btn-outline-secondary btn-block" id="story-button" type="submit"
+                                    class="btn btn-lg btn-warning btn-block button-spacing" type="submit"
                             >Go This Way</button></p></li>
                         </form>
                         <form class="choice-form" th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_b_id}" method="GET">
                             <li class="story"><span th:text= "${choice.choice_b_text}" /><p><button
-                                    class="btn btn-lg btn-outline-secondary btn-block" id="story-button" type="submit">Go
+                                    class="last-buttons btn btn-lg btn-warning btn-block button-spacing"  type="submit">Go
                                 That Way</button></p></li>
                         </form>
                     </div>
@@ -68,7 +66,7 @@
             <ul class="footer-menu">
                 <li><a href="/about-us.html">About Us</a></li>
                 <span></span>
-                <li><a href="/logout">Log Out</a></li>
+                <li><a href="/portal">Log Out</a></li>
                 <span></span>
                 <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
                 </form></li>

@@ -35,6 +35,10 @@ a:visited{
     text-decoration: none;
 }
 
+h1, h2 {
+    margin-top: 3vh;
+}
+
 main section{
     padding-left: 5vw;
     padding-right: 5vw;
@@ -53,10 +57,6 @@ button {
     /*width: 15%;*/
 }
 
-h1{
-    margin-top: 3vh;
-}
-
 li {
     list-style-type: none;
     display: block;
@@ -72,15 +72,16 @@ footer{
     padding: 1vh;
 }
 
-/*.about{*/
-    /*align-content: left;*/
-    /*margin-left: 3vw;*/
-/*}*/
-
 .about-button {
     width: 40vw;
     padding:auto;
     margin: 2vh auto 2vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
+}
+
+.button-spacing{
+    margin-top: 2vh;
 }
 
 .choice-form {
@@ -112,21 +113,29 @@ footer{
 
 .story {
     display: inline;
+    margin-bottom: 1em;
 }
+
 
 #deleteform button{
     border: none;
+    background-color: #FEC601;
+    color: #0D3945;
 
 }
 #end-button{
     margin-bottom: 4vh;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    font-size: auto;
+    /*font-size: auto;*/
     align: center;
+    /*background-color: #FEC601;*/
+    /*color: #0D3945;*/
 }
 
 #logout {
@@ -134,32 +143,39 @@ footer{
 }
 
 #logout-button {
-
     width: 35vw;
     padding:auto;
-    font-size: auto;
+    /*font-size: auto;*/
     margin: 4vh auto 8vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #register-button {
     width: 35vw;
     padding:auto;
-    font-size: auto;
+    /*font-size: auto;*/
     margin:0 auto 4vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #signin-button {
     width: 35vw;
     padding:auto;
-    font-size: auto;
+    /*font-size: auto;*/
     margin: auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #story-button {
     width: 40vw;
     padding:auto;
     font-size: 2vh;
-    margin: auto;
+    margin: 1em auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #special-spacer{
@@ -172,10 +188,71 @@ footer{
     font-style: italic;
 }
 
-/*@media only screen and (min-width: 600px){*/
-    /*li {*/
-        /*list-style-type: none;*/
-        /*display: block;*/
+#delete-main{
+    margin: auto;
+    width: 60%;
+}
 
-    /*}*/
-/*}*/
+#delete-h1{
+    text-align: center;
+}
+
+#delete-message{
+    text-align: center;
+}
+
+#general-error-main{
+    margin: auto;
+    width: 60%;
+}
+
+#general-error-h1{
+    text-align: center;
+}
+
+.general-error-p{
+    text-align: center;
+}
+
+#login-error-main{
+    margin: auto;
+    width: 60%;
+}
+
+#login-error-h1{
+    text-align: center;
+}
+
+#login-error-p{
+    text-align: center;
+}
+
+#story-choice-main{
+    margin: auto;
+    width: 60%;
+}
+
+#story-choice-h1{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#story-choice-h2{
+    text-align: center;
+    margin-top: .75em;
+}
+
+#story-choice-ul{
+    text-align: center;
+}
+
+#story-path-section{
+    margin: auto;
+    width: 70%;
+}
+
+#prompt {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid
+}
