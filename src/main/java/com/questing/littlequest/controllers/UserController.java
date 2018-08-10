@@ -23,6 +23,7 @@ public class UserController {
     @GetMapping("/portal")
     public String portalPage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
+        System.out.println("session = " + session);
         String username = (String) session.getAttribute("username");
 
         //I wanted a more meaningful and easily read console log to follow the program through
@@ -31,15 +32,19 @@ public class UserController {
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
         //Only change the value of username to "user" if the logged in session is false/null
-        if (session.getAttribute("loggedin") == null) {
-            model.addAttribute("username", "user");
-            boolean isLoggedIn = false;
-            model.addAttribute("isLoggedIn", isLoggedIn);
+        Object rawIsLoggedIn = session.getAttribute("loggedin");
+        boolean isLoggedIn = false;
+        if (rawIsLoggedIn != null) {
+            isLoggedIn = (boolean) rawIsLoggedIn;
+        }
 
+        if (!isLoggedIn) {
+            model.addAttribute("username", "user");
+            model.addAttribute("isLoggedIn", isLoggedIn);
         } else {
-            boolean isLoggedIn = true;
             model.addAttribute("isLoggedIn", isLoggedIn);
         }
+
         //If the session is null, the user name will be set to user. If the session above is not null, then
         //the username will persist from the previous session.
         if (username != null) {
@@ -153,7 +158,7 @@ public class UserController {
         //to get the information it needs for proper user info
         if (username != null) {
             model.addAttribute("username", username);
-            model.addAttribute("isLoggedIn", isLoggedIn);
+//            model.addAttribute("isLoggedIn", isLoggedIn);
         }
 
         //I wanted a more meaningful and easily read console log to follow the program through
@@ -161,6 +166,7 @@ public class UserController {
                 + "Session ID: " + session.getId() + " for User " + "\"" + username + "\""
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
 
+        model.addAttribute("isLoggedIn", isLoggedIn);
         return "index";
     }
 
