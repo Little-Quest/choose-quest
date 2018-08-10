@@ -4,64 +4,148 @@
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
-.selector-for-some-widget {
-    box-sizing: content-box;
-}
-nav {
-    background-color: #FEC601 ;
-    font-size: 3vh;
+html{
+    position: relative;
+    min-height: 100%;
 }
 
 body {
     background-color: #19647E;
     color: white;
     font-size: 3vh;
+    /*margin-bottom: 60px;*/
+}
+
+nav {
+    background-color: #FEC601 ;
+    font-size: 3vh;
+    color: #0D3945;
 }
 
 a{
-    color: white;
+    color: #0D3945;
 }
 
 a:hover{
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 a:visited{
-    color: dimgrey;
-
+    color: #0D3945;
+    text-decoration: none;
 }
 
+main section{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
 img {
     align-content: center;
     display: inline-block;
     height: auto;
+    margin: 2vw;
 }
 
 button {
     background-color: #FEC601;
-    color: white;
+    color: #0D3945;
     /*margin: auto;*/
     /*width: 15%;*/
 }
 
+h1{
+    margin-top: 3vh;
+}
+
 li {
     list-style-type: none;
+    display: block;
 
 }
+
+footer{
+    background-color: #FEC601;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2vh;
+    padding: 1vh;
+}
+
+/*.about{*/
+    /*align-content: left;*/
+    /*margin-left: 3vw;*/
+/*}*/
+
+.about-button {
+    width: 40vw;
+    padding:auto;
+    margin: 2vh auto 2vh auto;
+}
+
+.choice-form {
+    margin-top: 1.5em;
+}
+
+.footer-menu{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-menu li{
+    display: inline;
+    margin: 0 3vw;
+}
+
+.footer-menu form{
+    display: inline;
+}
+
+.last-buttons{
+    margin-bottom: 8vh;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
 .story {
     display: inline;
 }
-.about{
-    align-content: left;
-    margin-left: 3vw;
-}
 
+#deleteform button{
+    border: none;
+
+}
+#end-button{
+    margin-bottom: 4vh;
+}
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
     font-size: auto;
     align: center;
+}
+
+#logout {
+    /*margin-top: 4em;*/
+}
+
+#logout-button {
+
+    width: 35vw;
+    padding:auto;
+    font-size: auto;
+    margin: 4vh auto 8vh auto;
+}
+
+#register-button {
+    width: 35vw;
+    padding:auto;
+    font-size: auto;
+    margin:0 auto 4vh auto;
 }
 
 #signin-button {
@@ -71,20 +155,6 @@ li {
     margin: auto;
 }
 
-#register-button {
-    width: 35vw;
-    padding:auto;
-    font-size: auto;
-    margin: auto;
-}
-
-#logout-button {
-     width: 35vw;
-     padding:auto;
-     font-size: auto;
-     margin: auto;
- }
-
 #story-button {
     width: 40vw;
     padding:auto;
@@ -92,25 +162,20 @@ li {
     margin: auto;
 }
 
-.about-button {
-    width: 35vw;
-    padding:auto;
-    margin: auto;
-}
+#special-spacer{
+    line-height: 5vh;
+    margin-bottom: 10vh;
 
-#logout {
-    margin-top: 4em;
 }
-
 #tiny{
     font-size: 2vh;
     font-style: italic;
 }
 
-@media only screen and (min-width: 600px){
-    li {
-        list-style-type: none;
-        display: block;
+/*@media only screen and (min-width: 600px){*/
+    /*li {*/
+        /*list-style-type: none;*/
+        /*display: block;*/
 
-    }
-}
+    /*}*/
+/*}*/
