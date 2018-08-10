@@ -33,6 +33,9 @@ public class UserController {
         //Only change the value of username to "user" if the logged in session is false/null
         if (session.getAttribute("loggedin") == null) {
             model.addAttribute("username", "user");
+        } else {
+            boolean isLoggedIn = true;
+            model.addAttribute("isLoggedIn", isLoggedIn);
         }
         //If the session is null, the user name will be set to user. If the session above is not null, then
         //the username will persist from the previous session.
@@ -47,9 +50,9 @@ public class UserController {
     @PostMapping("/login")
     public ModelAndView login(
             HttpServletRequest request,
-//           @PathVariable("user_id") Long user_id,
             @RequestParam String username,
-            @RequestParam String password
+            @RequestParam String password,
+            Model model
     ) {
         ModelAndView mv = new ModelAndView();
 
@@ -77,6 +80,9 @@ public class UserController {
                 session.setAttribute("username", username);
                 session.setAttribute("user_id", user.user_id);
                 session.setAttribute("user", user);
+
+                boolean isLoggedIn = true;
+                model.addAttribute("isLoggedIn", isLoggedIn);
 
             } else {
                 mv.setViewName("login-error");
@@ -116,6 +122,10 @@ public class UserController {
         session.setAttribute("username", username);
         session.setAttribute("user_id", user.user_id);
         session.setAttribute("user", user);
+
+        boolean isLoggedIn = true;
+        model.addAttribute("isLoggedIn", isLoggedIn);
+
         return mv;
     }
 

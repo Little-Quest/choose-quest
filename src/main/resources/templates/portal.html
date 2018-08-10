@@ -58,6 +58,13 @@
                     <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Log Out</button>
                 </form>
             </div>
+
+            <div th:if="${isLoggedIn} == true">
+                <form action="/story-choice" method="GET">
+                    <button type="submit">Select Story</button>
+                </form>
+            </div>
+
         </main>
         <footer class="footer">
             <div class="container">
