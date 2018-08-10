@@ -32,11 +32,11 @@
             <!--<img class="navbar-brand" src="images/LQ_tiny.png"/>-->
         </nav>
     </header>
-    <section>
+    <section id="story-path-section">
         <div>
             <ul>
                 <div th:each="prompt : ${prompts}">
-                    <p th:text="${prompt.prompt_text}"><p></p>
+                    <p id="prompt" th:text="${prompt.prompt_text}"><p></p>
                     <div th:each="choice : ${choices}">
 
                         <form class="choice-form" th:action="'/story/'+ ${prompt.prompt_id} + '/' + ${choice.choice_id} + '/' + ${choice.choice_a_id}" method="GET">
