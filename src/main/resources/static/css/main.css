@@ -35,6 +35,10 @@ a:visited{
     text-decoration: none;
 }
 
+h1, h2 {
+    margin-top: 3vh;
+}
+
 main section{
     padding-left: 5vw;
     padding-right: 5vw;
@@ -68,17 +72,16 @@ footer{
     padding: 1vh;
 }
 
-/*.about{*/
-    /*align-content: left;*/
-    /*margin-left: 3vw;*/
-/*}*/
-
 .about-button {
     width: 40vw;
     padding:auto;
     margin: 2vh auto 2vh auto;
     background-color: #FEC601;
     color: #0D3945;
+}
+
+.button-spacing{
+    margin-top: 2vh;
 }
 
 .choice-form {
@@ -112,6 +115,7 @@ footer{
     display: inline;
     margin-bottom: 1em;
 }
+
 
 #deleteform button{
     border: none;
@@ -182,18 +186,6 @@ footer{
 #tiny{
     font-size: 2vh;
     font-style: italic;
-}
-
-/*@media only screen and (min-width: 600px){*/
-    /*li {*/
-        /*list-style-type: none;*/
-        /*display: block;*/
-
-    /*}*/
-/*}*/
-
-h1{
-    margin-top: 3vh;
 }
 
 #delete-main{

@@ -40,7 +40,7 @@
 
                 <form th:action="'/story/' + ${story.story_id}" method="GET">
                     <h2 th:text= "${story.title}" id="story-choice-h2"/>
-                    <button id="story-button" class="btn btn-lg btn-outline-secondary btn-block"
+                    <button class="btn btn-lg btn-warning btn-block button-spacing"
                             type="submit">Start Quest</button>
                 </form>
 
@@ -52,7 +52,7 @@
             <ul class="footer-menu">
                 <li><a href="/about-us.html">About Us</a></li>
                 <span></span>
-                <li><a href="/logout">Log Out</a></li>
+                <li><a href="/portal">Log Out</a></li>
                 <span></span>
                 <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
                 </form></li>

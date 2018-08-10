@@ -38,7 +38,7 @@
         <p th:text="${error}" id="delete-message"></p>
         <div th:if="${isLoggedIn} == false">
             <form action="/logout" method="POST">
-                <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Delete Me Completely</button>
+                <button id="logout-button" class="btn btn-lg btn-warning btn-block button-spacing" type="submit">Delete Me</button>
             </form>
         </div>
     </main>
