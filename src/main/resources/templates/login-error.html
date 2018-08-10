@@ -34,8 +34,13 @@
         </nav>
     </header>
     <main>
-        <h1>Error Logging In</h1>
+        <h1>Error</h1>
         <p th:text="${error}"></p>
+        <div th:if="${isLoggedIn} == false">
+            <form action="/logout" method="POST">
+                <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Delete Me Completely</button>
+            </form>
+        </div>
     </main>
     <footer class="footer">
         <div class="container">

@@ -171,9 +171,26 @@ public class UserController {
     }
 
     //delete a currently existing user
+//    @GetMapping("/delete")
+//    public String deleteUser (HttpServletRequest request) {
+//        HttpSession session = request.getSession();
+//        String username = (String) session.getAttribute("username");
+//        Long userid = (Long) session.getAttribute("user_id");
+//        Users user = (Users) session.getAttribute("user");
+//
+//        List<Users> du1 = userRepository.removeByUsername(user.username);
+//        System.out.println("DU1 = " + du1);
+//
+//        String du2 = userRepository.deleteByUsername(user.username);
+//        System.out.println("DU2 = " + du2);
+//
+//        return "redirect:/portal";
+//    }
+
     @GetMapping("/delete")
-//    public String deleteUser (@RequestParam String username, @RequestParam String password, HttpServletRequest request) {
-    public String deleteUser (HttpServletRequest request) {
+    public ModelAndView deleteUser (HttpServletRequest request, Model model) {
+        ModelAndView mv = new ModelAndView();
+
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         Long userid = (Long) session.getAttribute("user_id");
@@ -185,6 +202,13 @@ public class UserController {
         String du2 = userRepository.deleteByUsername(user.username);
         System.out.println("DU2 = " + du2);
 
-        return "redirect:/";
+        mv.setViewName("login-error");
+        mv.addObject("error", "Please click the button below to verify you wish to be erased from our user rolls completely. We'll miss you! Register again if you'd like to come back.");
+
+        boolean isLoggedIn = false;
+        model.addAttribute("isLoggedIn", isLoggedIn);
+
+        return mv;
     }
+
 }
