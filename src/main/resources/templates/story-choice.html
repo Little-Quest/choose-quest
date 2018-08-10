@@ -20,10 +20,7 @@
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Welcome Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/portal">Entry Portal</a>
+                        <a class="nav-link" href="/">Return Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about-us.html">About Us</a>
@@ -33,16 +30,17 @@
                     </li>
                 </ul>
             </div>
+            <img class="navbar-brand" src="images/LQ_tiny.png"/>
         </nav>
     </header>
-    <main>
-        <h3>Choose your quest</h3>
-        <ul>
+    <main id="story-choice-main">
+        <h1 id="story-choice-h1">Choose Your Quest</h1>
+        <ul id="story-choice-ul">
             <li th:each= "story : ${stories}">
 
                 <form th:action="'/story/' + ${story.story_id}" method="GET">
-                    <span th:text= "${story.title}" />
-                    <button id="story-button" class="btn btn-lg btn-outline-secondary btn-block"
+                    <h2 th:text= "${story.title}" id="story-choice-h2"/>
+                    <button class="btn btn-lg btn-warning btn-block button-spacing"
                             type="submit">Start Quest</button>
                 </form>
 
@@ -54,7 +52,7 @@
             <ul class="footer-menu">
                 <li><a href="/about-us.html">About Us</a></li>
                 <span></span>
-                <li><a href="/logout">Log Out</a></li>
+                <li><a href="/portal">Log Out</a></li>
                 <span></span>
                 <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
                 </form></li>
