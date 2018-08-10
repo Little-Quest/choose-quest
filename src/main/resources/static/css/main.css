@@ -53,10 +53,6 @@ button {
     /*width: 15%;*/
 }
 
-h1{
-    margin-top: 3vh;
-}
-
 li {
     list-style-type: none;
     display: block;
@@ -194,3 +190,20 @@ footer{
 
     /*}*/
 /*}*/
+
+#delete-main{
+    margin: auto;
+    width: 60%;
+}
+
+h1{
+    margin-top: 3vh;
+}
+
+#delete-h1{
+    text-align: center;
+}
+
+#delete-message{
+    text-align: center;
+}
