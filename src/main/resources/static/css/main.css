@@ -220,3 +220,16 @@ h1{
 .general-error-p{
     text-align: center;
 }
+
+#login-error-main{
+    margin: auto;
+    width: 60%;
+}
+
+#login-error-h1{
+    text-align: center;
+}
+
+#login-error-p{
+    text-align: center;
+}
