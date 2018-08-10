@@ -108,6 +108,12 @@ public class StoryController {
         return "story";
     }
 
+//    //route to index page
+//    @GetMapping("/")
+//    public String home(HttpServletRequest request){
+//        return "index";
+//    }
+
     //graceful error
     @GetMapping("/error")
     public String error(HttpServletRequest request) {

@@ -27,24 +27,20 @@
                 <div class="collapse navbar-collapse" id="navbar-content">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                        <a class="nav-link" href="/">Return Home</a>
+                        <a class="nav-link nav-space" href="/index">Return Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/portal">Get Started</a>
+                        <li class="nav-item active">
+                            <a class="nav-link nav-space" href="/portal">Get Started</a>
                         </li>
                         <!--<li class="nav-item">-->
                             <!--<a class="nav-link" href="/about-us.html">About Us</a>-->
                         <!--</li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/portal">Logout</a>
-                        </li>
-                        <li id="logout" class="container">
-                            <form action="/logout" method="POST">
-                                <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Log Out</button>
-                            </form>
-                        </li>
+                        <li><form action="/logout" method="POST">
+                            <button class="no-border-button" class="nav-link nav-space" type="submit"><a href="/portal">Log Out</a></button>
+                        </form> </li>
                     </ul>
                 </div>
+                <img class="navbar-brand" src="images/LQ_tiny.png"/>
             </nav>
         </header>
         <main class="container">
@@ -68,9 +64,9 @@
                     create code that delivers brand promises.
                 </p>
                 <ul>
-                    <li> <button class="about-button about-button btn btn-lg btn-outline-secondary btn-block"
+                    <li> <button class="about-button btn btn-warning"
                             href="https://github.com/AmyCohen?tab=repositories"><i class="fab fa-github"></i> Github</button></li>
-                    <li> <button class="about-button btn btn-lg btn-outline-secondary btn-block"
+                    <li> <button class="about-button btn btn-warning"
                             href="https://www.linkedin.com/in/amyvcohen/"><i class="fab fa-linkedin"></i> LinkedIn</button></li>
                 </ul>
             </div>
@@ -81,9 +77,9 @@
                     Combining my development skills with my history as a leader in marketing, allows me to offer
                     organizations great experience driving results through team collaboration.</p>
                 <ul>
-                    <li><button class="about-button btn btn-lg btn-outline-secondary btn-block"
+                    <li><button class="about-button btn btn-warning"
                             href="https://github.com/FavoredFortune"><i class="fab fa-github"></i> Github</button></li>
-                    <li><button class="about-button btn btn-lg btn-outline-secondary btn-block"
+                    <li><button class="about-button btn btn-warning"
                             href="https://www.linkedin.com/in/suzannerichman/"><i class="fab fa-linkedin"></i> LinkedIn</button></li>
                 </ul>
             </div>
@@ -106,10 +102,11 @@
             <div class="container">
                 <ul class="footer-menu">
                     <li><a href="/about-us.html">About Us</a></li>
-                    <span></span>
-                    <li><a href="/portal">Log Out</a></li>
-                    <span></span>
-                    <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
+                    <li><form action="/logout" method="POST">
+                        <button id="logout-button" class="no-border-button"
+                                type="submit"><a href="/portal">Log Out</a></button>
+                    </form> </li>
+                    <li><form  action="/delete" method="GET"><button id="deleteuser" class="no-border-button" type="submit">Delete Me</button>
                     </form></li>
                 </ul>
             </div>

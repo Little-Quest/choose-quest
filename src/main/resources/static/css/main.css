@@ -22,6 +22,36 @@ nav {
     color: #0D3945;
 }
 
+main section{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+h1{
+    margin-top: 3vh;
+}
+
+nav > form{
+    margin: -2vw auto 2vw auto;
+    /*padding: -10vw auto;*/
+    position: relative;
+    height: 2vh;
+}
+
+img {
+    align-content: center;
+    display: inline-block;
+    height: auto;
+    margin: 4vw auto 3vw auto;
+}
+
+button {
+    background-color: #FEC601;
+    color: #0D3945;
+    /*margin: auto;*/
+    /*width: 15%;*/
+}
+
 a{
     color: #0D3945;
 }
@@ -35,27 +65,6 @@ a:visited{
     text-decoration: none;
 }
 
-main section{
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-img {
-    align-content: center;
-    display: inline-block;
-    height: auto;
-    margin: 2vw;
-}
-
-button {
-    background-color: #FEC601;
-    color: #0D3945;
-    /*margin: auto;*/
-    /*width: 15%;*/
-}
-
-h1{
-    margin-top: 3vh;
-}
 
 li {
     list-style-type: none;
@@ -68,8 +77,8 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: 2vh;
-    padding: 1vh;
+    font-size: 2.5vh;
+    /*padding: 1vh;*/
 }
 
 /*.about{*/
@@ -87,10 +96,24 @@ footer{
     margin-top: 1.5em;
 }
 
+.nav-space{
+    margin-left: 2vh;
+}
+
+.no-border-button{
+    border: none;
+    margin: 3vh -1vh;
+}
+
 .footer-menu{
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+.footer-menu ul{
+    /*margin: 3vw auto;*/
+    padding:0;
 }
 
 .footer-menu li{
@@ -114,12 +137,8 @@ footer{
     display: inline;
 }
 
-#deleteform button{
-    border: none;
-
-}
 #end-button{
-    margin-bottom: 4vh;
+    margin-bottom: 15vh;
 }
 #entry-button {
     width: 45vw;
