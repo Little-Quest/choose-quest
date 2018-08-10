@@ -81,6 +81,8 @@ footer{
     width: 40vw;
     padding:auto;
     margin: 2vh auto 2vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 .choice-form {
@@ -104,6 +106,8 @@ footer{
 
 .last-buttons{
     margin-bottom: 8vh;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 .selector-for-some-widget {
@@ -116,10 +120,14 @@ footer{
 
 #deleteform button{
     border: none;
+    background-color: #FEC601;
+    color: #0D3945;
 
 }
 #end-button{
     margin-bottom: 4vh;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 #entry-button {
     width: 45vw;
@@ -127,6 +135,8 @@ footer{
     margin-bottom: 10vh;
     font-size: auto;
     align: center;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #logout {
@@ -134,11 +144,12 @@ footer{
 }
 
 #logout-button {
-
     width: 35vw;
     padding:auto;
     font-size: auto;
     margin: 4vh auto 8vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #register-button {
@@ -146,6 +157,8 @@ footer{
     padding:auto;
     font-size: auto;
     margin:0 auto 4vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #signin-button {
@@ -153,6 +166,8 @@ footer{
     padding:auto;
     font-size: auto;
     margin: auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #story-button {
@@ -160,6 +175,8 @@ footer{
     padding:auto;
     font-size: 2vh;
     margin: auto;
+    background-color: #FEC601;
+    color: #0D3945;
 }
 
 #special-spacer{
