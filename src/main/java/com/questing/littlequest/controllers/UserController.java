@@ -33,6 +33,9 @@ public class UserController {
         //Only change the value of username to "user" if the logged in session is false/null
         if (session.getAttribute("loggedin") == null) {
             model.addAttribute("username", "user");
+            boolean isLoggedIn = false;
+            model.addAttribute("isLoggedIn", isLoggedIn);
+
         } else {
             boolean isLoggedIn = true;
             model.addAttribute("isLoggedIn", isLoggedIn);
@@ -141,6 +144,8 @@ public class UserController {
         if (!isLoggedIn) {
             username = "user";
             model.addAttribute("username", "user");
+            model.addAttribute("isLoggedIn", isLoggedIn);
+
         }
 
         //Once the username is not null (as it would be if the visitor has never visited before)
@@ -148,6 +153,7 @@ public class UserController {
         //to get the information it needs for proper user info
         if (username != null) {
             model.addAttribute("username", username);
+            model.addAttribute("isLoggedIn", isLoggedIn);
         }
 
         //I wanted a more meaningful and easily read console log to follow the program through
