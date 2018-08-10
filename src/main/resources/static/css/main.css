@@ -80,7 +80,7 @@ footer{
 .about-button {
     width: 40vw;
     padding:auto;
-    margin: 2vh auto 4vh auto;
+    margin: 2vh auto 2vh auto;
 }
 
 .choice-form {
@@ -100,6 +100,10 @@ footer{
 
 .footer-menu form{
     display: inline;
+}
+
+.last-buttons{
+    margin-bottom: 8vh;
 }
 
 .selector-for-some-widget {
