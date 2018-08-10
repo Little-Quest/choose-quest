@@ -202,8 +202,8 @@ public class UserController {
         String du2 = userRepository.deleteByUsername(user.username);
         System.out.println("DU2 = " + du2);
 
-        mv.setViewName("login-error");
-        mv.addObject("error", "Please click the button below to verify you wish to be erased from our user rolls completely. We'll miss you! Register again if you'd like to come back.");
+        mv.setViewName("delete");
+        mv.addObject("error", "Please click the button below to verify you wish to be erased from our users list completely. We'll miss you! Register again if you'd like to come back.");
 
         boolean isLoggedIn = false;
         model.addAttribute("isLoggedIn", isLoggedIn);
