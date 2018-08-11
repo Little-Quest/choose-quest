@@ -1,23 +1,27 @@
 <!DOCTYPE html>
+
+<!--Thymeleaf library helps populate template with data-->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta description="Little Quest Portal">
         <meta charset="UTF-8">
+
+        <!--meta tags for social media links from url and search engines-->
         <meta property="og:title" content="Little Quest Portal">
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://littlequest.us/portal">
-
         <meta property="og:description" content="Little Quest is a short story game.">
         <meta property="og:image" content="http://littlequest.us/images/LQ_small.png">
 
         <title>Entry Portal</title>
+
         <!--Font Awesome library of icons-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
         <!-- Latest compiled and minified Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <!-- This is our custom sheet not bootstrap -->
+        <!-- Our CSS -->
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
@@ -41,6 +45,8 @@
             </nav>
         </header>
         <main class="container text-center">
+            <h1>Start Questing!</h1>
+            <p class="tiny">Login or register here to get started on your little quest.</p>
             <div th:if="${isLoggedIn} == false">
                 <div id="login">
                 <h2>Login</h2>
@@ -59,7 +65,6 @@
                     </form>
                 </div>
             </div>
-
             <div th:if="${isLoggedIn} == true">
 
             <div id="logout" class="container">
@@ -67,29 +72,24 @@
                     <button id="logout-button" class="btn btn-lg btn-outline-secondary btn-block" type="submit">Log Out</button>
                 </form>
             </div>
-
                 <div>
                     <form action="/story-choice" method="GET">
                         <button type="submit">Select Story</button>
                     </form>
                 </div>
             </div>
-
         </main>
         <footer class="footer">
             <div class="container">
                 <ul class="footer-menu">
                     <li><a href="/about-us.html">About Us</a></li>
                     <span></span>
-                    <li><a href="/logout">Log Out</a></li>
-                    <span></span>
                     <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
                     </form></li>
                 </ul>
             </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     </body>
 </html>

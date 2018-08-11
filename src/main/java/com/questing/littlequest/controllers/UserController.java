@@ -1,32 +1,42 @@
 package com.questing.littlequest.controllers;
 
+//application DB models and repositories
 import com.questing.littlequest.models.Users;
 import com.questing.littlequest.repositories.UserRepository;
+
+//encryption library for user password security
 import org.mindrot.jbcrypt.BCrypt;
+
+//Springboot MVC libraries for controller, model and view functionality
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+//Java libraries for help with basic server and program functionality
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 import java.util.*;
 
+//This controller helps manage all parts of user interaction
 @Controller
 @SessionAttributes("username")
 public class UserController {
 
+    //these lines of "autowired" code help connect the JPA user repository
+    //which models the user table in our DB to the server/controller
     @Autowired
     UserRepository userRepository;
 
+    //manage user interaction with application of sign up and login
     @GetMapping("/portal")
     public String portalPage(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         System.out.println("session = " + session);
         String username = (String) session.getAttribute("username");
 
-        //I wanted a more meaningful and easily read console log to follow the program through
+        //Meaningful console log to follow the program through
         System.out.println("From UserController: \n"
                 + "Session ID: " + session.getId() + " for User " + "\"" + username + "\""
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
@@ -37,7 +47,6 @@ public class UserController {
         if (rawIsLoggedIn != null) {
             isLoggedIn = (boolean) rawIsLoggedIn;
         }
-
         if (!isLoggedIn) {
             model.addAttribute("username", "user");
             model.addAttribute("isLoggedIn", isLoggedIn);
@@ -45,7 +54,8 @@ public class UserController {
             model.addAttribute("isLoggedIn", isLoggedIn);
         }
 
-        //If the session is null, the user name will be set to user. If the session above is not null, then
+        //If the session is null, the user name will be set to user.
+        // If the session above is not null, then
         //the username will persist from the previous session.
         if (username != null) {
             model.addAttribute("username", username);
@@ -54,7 +64,6 @@ public class UserController {
     }
 
     //Log in a returning user
-//    @ModelAttribute("user_id")
     @PostMapping("/login")
     public ModelAndView login(
             HttpServletRequest request,
@@ -91,7 +100,6 @@ public class UserController {
 
                 boolean isLoggedIn = true;
                 model.addAttribute("isLoggedIn", isLoggedIn);
-
             } else {
                 mv.setViewName("login-error");
                 mv.addObject("error", "Wrong password. Try again.");
@@ -108,8 +116,6 @@ public class UserController {
                                     HttpServletRequest request){
 
         List<Users> checkUsername = userRepository.findByUsername(username);
-
-
         System.out.println(Arrays.toString(new List[]{checkUsername}));
         ModelAndView mv = new ModelAndView();
 
@@ -137,6 +143,7 @@ public class UserController {
         return mv;
     }
 
+    //manage user logging out and resetting session attributes accordingly
     @PostMapping("/logout")
     public String logout(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
@@ -158,10 +165,9 @@ public class UserController {
         //to get the information it needs for proper user info
         if (username != null) {
             model.addAttribute("username", username);
-//            model.addAttribute("isLoggedIn", isLoggedIn);
         }
 
-        //I wanted a more meaningful and easily read console log to follow the program through
+        //Meaningful console log to follow the program through
         System.out.println("From Logout Page: \n"
                 + "Session ID: " + session.getId() + " for User " + "\"" + username + "\""
                 + "\n" + "Logged In = " + session.getAttribute("loggedin") + "\n");
@@ -170,23 +176,7 @@ public class UserController {
         return "index";
     }
 
-    //delete a currently existing user
-//    @GetMapping("/delete")
-//    public String deleteUser (HttpServletRequest request) {
-//        HttpSession session = request.getSession();
-//        String username = (String) session.getAttribute("username");
-//        Long userid = (Long) session.getAttribute("user_id");
-//        Users user = (Users) session.getAttribute("user");
-//
-//        List<Users> du1 = userRepository.removeByUsername(user.username);
-//        System.out.println("DU1 = " + du1);
-//
-//        String du2 = userRepository.deleteByUsername(user.username);
-//        System.out.println("DU2 = " + du2);
-//
-//        return "redirect:/portal";
-//    }
-
+    //delete a currently existing user, with user confirmation that they want to be deleted
     @GetMapping("/delete")
     public ModelAndView deleteUser (HttpServletRequest request, Model model) {
         ModelAndView mv = new ModelAndView();
@@ -210,5 +200,4 @@ public class UserController {
 
         return mv;
     }
-
 }
