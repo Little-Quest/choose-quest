@@ -1,9 +1,13 @@
-/*Color */
+/*Color Theme Choices for Little Quest*/
 /*Light Blue - #3DA539*/
 /*Teal - #73BFB8*/
 /*Yellow - #FEC601*/
 /*Orange - #EA7317*/
 /*Dark Blue - #19647E*/
+
+/*organized by tag, class then id, in alphabetical order for each type respectively*/
+
+/*tags*/
 html{
     position: relative;
     min-height: 100%;
@@ -13,7 +17,6 @@ body {
     background-color: #19647E;
     color: white;
     font-size: 3vh;
-    /*margin-bottom: 60px;*/
 }
 
 nav {
@@ -43,6 +46,7 @@ main section{
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
 img {
     align-content: center;
     display: inline-block;
@@ -53,14 +57,11 @@ img {
 button {
     background-color: #FEC601;
     color: #0D3945;
-    /*margin: auto;*/
-    /*width: 15%;*/
 }
 
 li {
     list-style-type: none;
     display: block;
-
 }
 
 footer{
@@ -72,6 +73,7 @@ footer{
     padding: 1vh;
 }
 
+/*classes*/
 .about-button {
     width: 40vw;
     padding:auto;
@@ -103,6 +105,10 @@ footer{
     display: inline;
 }
 
+.general-error-p{
+    text-align: center;
+}
+
 .last-buttons{
     margin-bottom: 8vh;
 }
@@ -116,45 +122,83 @@ footer{
     margin-bottom: 1em;
 }
 
+.tiny{
+    font-size: 2vh;
+    font-style: italic;
+}
 
+/*ids*/
 #deleteform button{
     border: none;
     background-color: #FEC601;
     color: #0D3945;
-
 }
+
+#delete-main{
+    margin: auto;
+    width: 60%;
+}
+
+#delete-h1{
+    text-align: center;
+}
+
+#delete-message{
+    text-align: center;
+}
+
 #end-button{
     margin-bottom: 4vh;
     background-color: #FEC601;
     color: #0D3945;
 }
+
 #entry-button {
     width: 45vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    /*font-size: auto;*/
     align: center;
-    /*background-color: #FEC601;*/
-    /*color: #0D3945;*/
 }
 
-#logout {
-    /*margin-top: 4em;*/
+#general-error-main{
+    margin: auto;
+    width: 60%;
+}
+
+#general-error-h1{
+    text-align: center;
+}
+
+#login-error-main{
+    margin: auto;
+    width: 60%;
+}
+
+#login-error-h1{
+    text-align: center;
+}
+
+#login-error-p{
+    text-align: center;
 }
 
 #logout-button {
     width: 35vw;
     padding:auto;
-    /*font-size: auto;*/
     margin: 4vh auto 8vh auto;
     background-color: #FEC601;
     color: #0D3945;
 }
 
+#prompt {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid
+}
+
 #register-button {
     width: 35vw;
     padding:auto;
-    /*font-size: auto;*/
     margin:0 auto 4vh auto;
     background-color: #FEC601;
     color: #0D3945;
@@ -163,7 +207,6 @@ footer{
 #signin-button {
     width: 35vw;
     padding:auto;
-    /*font-size: auto;*/
     margin: auto;
     background-color: #FEC601;
     color: #0D3945;
@@ -181,55 +224,6 @@ footer{
 #special-spacer{
     line-height: 5vh;
     margin-bottom: 10vh;
-
-}
-#tiny{
-    font-size: 2vh;
-    font-style: italic;
-}
-
-#delete-main{
-    margin: auto;
-    width: 60%;
-}
-
-#delete-h1{
-    text-align: center;
-}
-
-#delete-message{
-    text-align: center;
-}
-
-#general-error-main{
-    margin: auto;
-    width: 60%;
-}
-
-#general-error-h1{
-    text-align: center;
-}
-
-.general-error-p{
-    text-align: center;
-}
-
-#login-error-main{
-    margin: auto;
-    width: 60%;
-}
-
-#login-error-h1{
-    text-align: center;
-}
-
-#login-error-p{
-    text-align: center;
-}
-
-#story-choice-main{
-    margin: auto;
-    width: 60%;
 }
 
 #story-choice-h1{
@@ -242,6 +236,11 @@ footer{
     margin-top: .75em;
 }
 
+#story-choice-main{
+    margin: auto;
+    width: 60%;
+}
+
 #story-choice-ul{
     text-align: center;
 }
@@ -251,8 +250,3 @@ footer{
     width: 70%;
 }
 
-#prompt {
-    margin-top: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid
-}

@@ -1,4 +1,3 @@
-![Little Quest Logo](static/images/LQ_small.png)
 # Little-Quest
 http://littlequest.us/
 
@@ -42,9 +41,10 @@ Special thanks also to Justin Whitaker for Database consultation.
   - Gradle
   - JPA
   - Thymeleaf
-  - Postgresql
+  - PostgreSQL
   - IntellJ Ultimate
   - Portico
+  - BCrypt
   - Git
   - GitHub
   - Homebrew
@@ -54,6 +54,8 @@ Special thanks also to Justin Whitaker for Database consultation.
 ## Contributing
 Please see the [TEAM_AGREEMENT.md](TEAM_AGREEMENT.md) for more information about our workflow and processes.
 
+##Content
+All content, as of August 10, 2018 is currently under Public Domain and not copywritten. This may change in the future.
 
 ## License
 This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) for more details.

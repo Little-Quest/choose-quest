@@ -1,25 +1,30 @@
 package com.questing.littlequest.controllers;
 
+//application DB and Models imports
 import com.questing.littlequest.models.Choices;
 import com.questing.littlequest.models.Prompts;
 import com.questing.littlequest.models.Stories;
 import com.questing.littlequest.repositories.ChoiceRepository;
 import com.questing.littlequest.repositories.PromptRepository;
 import com.questing.littlequest.repositories.StoryRepository;
+
+//external imports from Springboot for MVC
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+//java imports for classes to help make our server/controller work
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Optional;
 
+//This controller helps manage all parts of the story play
 @Controller
 public class StoryController {
 
+    //these lines of "autowired" code help connect the JPA repositories
+    //which model tables in our DB to the server/controller
     @Autowired
     StoryRepository storyRepository;
 
@@ -29,6 +34,12 @@ public class StoryController {
     @Autowired
     ChoiceRepository choiceRepository;
 
+    //populate story choice page with story options from database
+    //currently (Aug 2018) DB has two story titles, but second story
+    //has no content
+    //future plans to further populate databse with more stories
+    //long term plans to let users build and populate their own stories
+    //for other users to read
     @GetMapping("/story-choice")
     public String storyDisplay(Model model) {
         List<Stories> stories = storyRepository.findAll();
@@ -37,6 +48,11 @@ public class StoryController {
         return "story-choice";
     }
 
+    //deliver story choices on the story choice page
+    //currently partially hard coded due to lack of content in DB
+    //of other stories
+    //future plan to further populate story, prompt and choice tables in DB
+    //and get variables working
     @GetMapping("/story/{story_id}")
     public String displayPromptAndChoices(@PathVariable int story_id, Model model) {
         if (story_id == 1) {
@@ -46,12 +62,16 @@ public class StoryController {
             model.addAttribute("prompts", prompts);
             model.addAttribute("choices", choices);
         } else {
+
+            //graceful error for missing content
             return "redirect:/error";
         }
-
         return "story";
     }
 
+    //delivering prompt with stories to the story page as users play
+    //currently hard coded by numbers to make it work, rather than variables
+    //future goal to get DB variables working
     @GetMapping("/story/{prompt_id}/{choice_id}/{choice_ab_id}")
     public String displayPromptAndChoices(@PathVariable int prompt_id, @PathVariable int choice_id, @PathVariable int choice_ab_id, Model model) {
         if (prompt_id == 1) {
@@ -102,16 +122,12 @@ public class StoryController {
                 }
             }
         }
-
-
-
         return "story";
     }
 
     //graceful error
     @GetMapping("/error")
     public String error(HttpServletRequest request) {
-
         return "redirect:/error";
     }
 }

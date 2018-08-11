@@ -1,5 +1,5 @@
 #Little Quest
-A fun quick way to read short adventure stories where users have the option to choose the next part of the story.
+A fun, quick way to read short adventure stories where users have the option to choose the next part of the story.
 
 #User Scenario A - Reader
 As a reader I want to be able to log in, or register, and choose a story to read. 
@@ -7,7 +7,7 @@ Once I choose a story to read, I want to be able to make choices about how the s
 I want to be able to log out when I am done. If I am curious I want to be able to learn about who made the application. 
 If I have a question or a problem I want to be able to email the team.
 
-I want to be able to delete my information as well in case I decide to leave the site permanently.
+I want to be able to delete my information as well, in case I decide to leave the site permanently.
 
 #User Scenario B - Writer (future stretch goal)
 As a writer, I would like to be able to log in to a special writer portal where I can write stories
