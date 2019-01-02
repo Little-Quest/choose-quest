@@ -115,12 +115,12 @@ public class UserController {
                                     HttpServletRequest request){
 
         List<Users> checkUsername = userRepository.findByUsername(username);
-        System.out.println(Arrays.toString(new List[]{checkUsername}));
         ModelAndView mv = new ModelAndView();
 
         if (checkUsername.size() != 0){
             mv.setViewName("login-error");
             mv.addObject("error", "That username already exists. Please choose another.");
+            return mv;
         }
 
         String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
