@@ -16,7 +16,7 @@
                 <li th:each= "story : ${stories}">
                     <form th:action="'/story/' + ${story.story_id}" method="GET">
                         <h2 th:text= "${story.title}" id="story-choice-h2"/>
-                        <button class="btn btn-lg btn-warning btn-block button-spacing"
+                        <button id="story-button" class="btn btn-lg btn-warning btn-block button-spacing"
                                 type="submit">Start Quest</button>
                     </form>
                 </li>

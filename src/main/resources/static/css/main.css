@@ -128,6 +128,15 @@ footer{
 }
 
 /*ids*/
+
+#choice-button {
+    width: 35vw;
+    padding:auto;
+    margin: 4vh auto 8vh auto;
+    background-color: #FEC601;
+    color: #0D3945;
+}
+
 #deleteform button{
     border: none;
     background-color: #FEC601;
@@ -189,6 +198,8 @@ footer{
     background-color: #FEC601;
     color: #0D3945;
 }
+
+
 
 #prompt {
     margin-top: 1em;

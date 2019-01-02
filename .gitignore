@@ -6,7 +6,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # .idea files - all
-* .idea
+.idea/
 
 
 # CMake
@@ -117,6 +117,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 #Application Properties file for local database settings
-application.properities
+application.properties
 
 # End of https://www.gitignore.io/api/java,macos,gradle,intellij
