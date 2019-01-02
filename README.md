@@ -30,6 +30,9 @@ Special thanks also to Justin Whitaker for Database consultation.
 - Domain setup with Heroku docs found [here](https://devcenter.heroku.com/articles/custom-domains#view-existing-domains)
 - Logo help from [logojoy](https://logojoy.com)
 - Icon fonts from [Font Awesome](https://fontawesome.com/icons/linkedin?style=brands)
+- Deprecated JAX-B API fix between versions 8 and 11 found here:
+   - [Stackoverflow](https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception-in-j)
+   - [Gradle Dependency](https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/2.2.4)
 
 
 ### Technology used

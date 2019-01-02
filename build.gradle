@@ -35,11 +35,9 @@ dependencies {
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'org.mindrot', name: 'jbcrypt', version: '0.3m'
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
 }
-group 'little-quest'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -50,3 +48,5 @@ dependencies {
 }
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
+
+
