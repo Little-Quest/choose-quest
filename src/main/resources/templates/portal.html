@@ -48,7 +48,7 @@
             <h1>Start Questing!</h1>
             <p class="tiny">Login or register here to get started on your little quest.</p>
             <div th:if="${isLoggedIn} == false">
-                <p id="login">
+                <div id="login">
                 <h2>Login</h2>
                     <form action="/login" method="POST" class="form-signin">
                         <p class="tiny">Username and password are case sensitive</p>
