@@ -18,4 +18,10 @@ public class AboutController {
         model.addAttribute("about-us", model);
         return "about-us";
     }
+
+    @GetMapping("/coming-soon")
+    public String comingSoon(Model model) {
+        model.addAttribute("coming-soon", model);
+        return "coming-soon";
+    }
 }
