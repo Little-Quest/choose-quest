@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta description="Little Quest - About Us">
         <meta charset="UTF-8">
@@ -12,41 +12,17 @@
         <meta property="og:image" content="http://littlequest.us/images/LQ_small.png">
 
         <title>About Us</title>
-
-        <!-- Latest compiled and minified Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Font Awesome library of icons-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-        <!-- Our custom CSS -->
-        <link rel="stylesheet" href="/css/main.css" />
+        <div th:replace="~{common :: head}"></div>
     </head>
     <body>
-        <header>
-            <nav class="sticky-top navbar navbar-expand-md navbar-light">
-                <button class="navbar-toggler btn-secondary" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="toggle-navigation"aria-haspopup="true"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbar-content">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Return Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/portal">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/portal">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-                <img class="navbar-brand" src="images/LQ_tiny.png"/>
-            </nav>
+        <header class="main-container">
+            <div th:replace="~{common :: nav}"></div>
         </header>
         <main class="container">
             <div class="form-row text-center">
                 <section class="about">
                     <h1>Why Little Quest?</h1>
-                    <img src="images/LQ_med.png">
+                    <img src="static/images/LQ_med.png">
                     <p>As kids we're certain you can remember a time when navigating unseen hallways, and untraveled caves
                         were not just in the pages of a book but in the annals of your mind. We hope that with further implementation
                         and your suggestions over time, we can craft this Little Quest of ours to be as big an adventure in your mind
@@ -57,7 +33,7 @@
             <div class="text-center">
                 <h1>About the Team</h1>
                 <h2>Amy Cohen</h2>
-                <img src="images/Amy.png">
+                <img src="../static/images/Amy.png">
                 <p> I am a Java developer and a passionate team leader. With a background in physical product design,
                     management, and customer service, I excel at process and organization. Combined with these skills, I
                     create code that delivers brand promises.</p>
@@ -68,7 +44,7 @@
             </div>
             <div class="text-center">
                     <h2>Suzanne Richman</h2>
-                    <img src="images/sooz.png">
+                    <img src="../static/images/sooz.png">
                     <p>As a full-stack developer I’m keen to help make people’s lives easier.
                     Combining my development skills with my history as a leader in marketing, allows me to offer
                     organizations great experience driving results through team collaboration.</p>
@@ -79,7 +55,7 @@
             </div>
             <div class="text-center">
                 <h2>Nicklas Di Pietro</h2>
-                <img src="images/nick.jpg">
+                <img src="../static/images/nick.jpg">
                 <p>I am a full-stack developer with a passion for improvement and art. I come from a background in 3-d
                 modeling and hope to one day meld the two into one cohesive form. I bring excellent teamwork and communicative
                 skills and a ferocity to learn more that drives my pursuit of knowledge.</p>
@@ -89,18 +65,7 @@
                 </ul>
             </div>
         </main>
-        <footer class="footer">
-            <div class="container">
-                <ul class="footer-menu">
-                    <li><a href="/about-us.html">About Us</a></li>
-                    <span></span>
-                    <li><a href="/portal">Log Out</a></li>
-                    <span></span>
-                    <li><form id="deleteform" action="/delete" method="GET"><button id="deleteuser" type="submit">Forget Me</button>
-                    </form></li>
-                </ul>
-            </div>
-        </footer>
+        <div th:replace="~{common :: footer}"></div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>

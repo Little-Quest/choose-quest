@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+    <head>
 
-</head>
-<body>
-<div th:fragment="head">
-    <!--Font Awesome library of icons-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <!-- Latest compiled and minified Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Our CSS -->
-    <link th:href="@{/style.css}"href="/css/main.css" rel="stylesheet" />
-</div>
+    </head>
+    <body>
+        <div th:fragment="head">
+            <!--Font Awesome library of icons-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+            <!-- Latest compiled and minified Bootstrap -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <!-- Our CSS -->
+            <link th:href="@{/css/main.css}"href="/css/main.css" rel="stylesheet" />
+        </div>
 
-</body>
+        <div th:fragment="nav">
+            <nav class="sticky-top navbar navbar-expand-md navbar-light">
+                <button class="navbar-toggler btn-secondary" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="toggle-navigation"aria-haspopup="true"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbar-content">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/portal">Start Questing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-us">About Us</a>
+                        </li>
+                        <li th:if="${isLoggedIn}==false"class="nav-item">
+                            <a class="nav-link" href="/portal">Login</a>
+                        </li>
+                        <li th:if="${isLoggedIn}==true"class="nav-item">
+                            <a class="nav-link" href="/portal">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="/"><img class="navbar-brand" src="images/LQ_tiny.png"/></a>
+            </nav>
+        </div>
+
+    <div th:fragment="footer">
+        <footer class="footer">
+            <div class="container">
+                <ul class="footer-menu">
+                    <li><a href="/about-us">About Us</a></li>
+                    <span></span>
+                    <li th:if="${isLoggedIn}==true"><a href="/portal">Log Out</a></li>
+                    <span></span>
+                    <li th:if="${isLoggedIn}==true"><a href ="/delete">Forget Me</a></li>
+                    </form></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+    </body>
 </html>
