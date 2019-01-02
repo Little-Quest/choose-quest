@@ -79,7 +79,6 @@ public class UserController {
 
         //needed to call the method of checkPassword on this instance of user
         Users user = userRepository.findUsersByUsername(username);
-        System.out.println("User = " + user.toString());
 
         //if the list of usernames is empty, it means the username entered does not exist
         if (checkUsername.size() == 0) {

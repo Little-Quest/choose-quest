@@ -37,6 +37,8 @@
         <main id="login-error-main">
             <h1 id="login-error-h1">Login Error</h1>
             <p th:text="${error}" id="login-error-p"></p>
+            <p class="general-error-p">
+                <button class="btn btn-lg btn-warning btn-block button-spacing" type="submit"><a href="/portal">Login or Register</a></button></p>
             <div th:if="${isLoggedIn} == false">
                 <form action="/logout" method="POST">
                     <button class="btn btn-lg btn-warning btn-block" type="submit">Delete Me Completely</button>
