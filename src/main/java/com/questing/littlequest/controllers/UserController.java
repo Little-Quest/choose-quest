@@ -79,7 +79,6 @@ public class UserController {
 
         //needed to call the method of checkPassword on this instance of user
         Users user = userRepository.findUsersByUsername(username);
-        System.out.println("User = " + user.toString());
 
         //if the list of usernames is empty, it means the username entered does not exist
         if (checkUsername.size() == 0) {
@@ -116,12 +115,12 @@ public class UserController {
                                     HttpServletRequest request){
 
         List<Users> checkUsername = userRepository.findByUsername(username);
-        System.out.println(Arrays.toString(new List[]{checkUsername}));
         ModelAndView mv = new ModelAndView();
 
         if (checkUsername.size() != 0){
             mv.setViewName("login-error");
             mv.addObject("error", "That username already exists. Please choose another.");
+            return mv;
         }
 
         String passhash = BCrypt.hashpw(password, BCrypt.gensalt(12));
