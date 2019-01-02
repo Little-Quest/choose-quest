@@ -37,7 +37,7 @@ public class StoryController {
     //populate story choice page with story options from database
     //currently (Aug 2018) DB has two story titles, but second story
     //has no content
-    //future plans to further populate databse with more stories
+    //future plans to further populate database with more stories
     //long term plans to let users build and populate their own stories
     //for other users to read
     @GetMapping("/story-choice")
