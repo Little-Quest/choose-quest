@@ -57,7 +57,7 @@ Special thanks also to Justin Whitaker for Database consultation.
 ## Contributing
 Please see the [TEAM_AGREEMENT.md](TEAM_AGREEMENT.md) for more information about our workflow and processes.
 
-##Content
+## Content
 All content, as of August 10, 2018 is currently under Public Domain and not copywritten. This may change in the future.
 
 ## License
